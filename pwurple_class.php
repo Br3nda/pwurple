@@ -25,7 +25,7 @@
 
 /*
  * $Id$
- * $RCSfile: wurfl_class.php,v $ v2.1 beta3 (Feb, 28 2006)
+ * $RCSfile: pwurple_class.php,v $ v2.1 beta3 (Feb, 28 2006)
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
  * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
  *
@@ -53,7 +53,7 @@
  */
 
 if ( !defined('WURFL_CONFIG') )
-	@require_once('./wurfl_config.php');
+	@require_once('./pwurple_config.php');
 
 if ( !defined('WURFL_CONFIG') )
 	die("NO CONFIGURATION");
@@ -61,16 +61,16 @@ if ( !defined('WURFL_CONFIG') )
 if ( defined('WURFL_PARSER_FILE') )
 	require_once(WURFL_PARSER_FILE);
 else
-	require_once("./wurfl_parser.php");
+	require_once("./pwurple_parser.php");
 
 
 /**
  *
- * wurfl_class
+ * pwurple_class
  *
  * Example:
- * $myDevice = new wurfl_class($wurfl, $wurfl_agents);	// $wurfl is the parsed
- *			// XML, $wurfl_agents is the list of agents and id's. When you first 
+ * $myDevice = new pwurple_class($wurfl, $pwurple_agents);	// $wurfl is the parsed
+ *			// XML, $pwurple_agents is the list of agents and id's. When you first 
  *			// start the class simply pass them as empty variables and will be filled.
  *			// Pass the variables with all the values if you already have them.
  * $myDevice->GetDeviceCapabilitiesFromAgent('SIE-S45');
@@ -81,9 +81,9 @@ else
  *		echo "WAP is supported, downloadfun is not";
  *
  */
-class wurfl_class {
+class pwurple_class {
 	/**
-	 * associative array created by wurfl_parser.php
+	 * associative array created by pwurple_parser.php
 	 * @var associative array
 	 */
 	var $_wurfl="";
@@ -92,7 +92,7 @@ class wurfl_class {
 	 * associative array user_agent=>id
 	 * @var associative array
 	 */
-	var $_wurfl_agents="";
+	var $_pwurple_agents="";
 
 	/**
 	 * device's complete user agent (just in case)
@@ -104,10 +104,10 @@ class wurfl_class {
 	 * best fitting user agent found in the xml
 	 * @var string
 	 */
-	var $wurfl_agent="";
+	var $pwurple_agent="";
 
 	/**
-	 * wurfl_id
+	 * pwurple_id
 	 * @var string
 	 */
 	var $id="";
@@ -151,25 +151,25 @@ class wurfl_class {
 	 * Constructor, checks the user agent and sets the variables.
 	 *
 	 * @param $_ua	device's user_agent
-	 * @param $wurfl	wurfl in array format as provided by wurfl_parser
-	 * @param $wurfl_agents	array set by wurfl_parser
+	 * @param $wurfl	wurfl in array format as provided by pwurple_parser
+	 * @param $pwurple_agents	array set by pwurple_parser
 	 * @param $_check_accept	if true will check accept headers for wml, wap, xhtml.
 	 *					Note: any i-mode device might be cut out
 	 *
 	 * @access public
 	 *
 	 */
-	function wurfl_class($wurfl=Array(), $wurfl_agents=Array()) {
+	function pwurple_class($wurfl=Array(), $pwurple_agents=Array()) {
 
 		$this->_wurfl = $wurfl;
-		$this->_wurfl_agents = $wurfl_agents;
+		$this->_pwurple_agents = $pwurple_agents;
 		$this->_toLog('constructor', 'Class Initiated', LOG_NOTICE);
 	}
 
 	/**
 	 * Given the device's id reads all its capabilities
 	 *
-	 * @param $_id	wurfl_id di un telefonino
+	 * @param $_id	pwurple_id di un telefonino
 	 *
 	 * @access private
 	 *
@@ -216,7 +216,7 @@ class wurfl_class {
 	/**
 	 * Given a device id reads its capabilities
 	 *
-	 * @param $_id	device's wurfl_id
+	 * @param $_id	device's pwurple_id
 	 *
 	 * @access private
 	 *
@@ -226,8 +226,8 @@ class wurfl_class {
 		if ( $_id == 'upgui_generic' ) {
 			$this->GUI = true;
 		}
-		if ( in_array($_id, $this->_wurfl_agents) ) {
-			$this->_toLog('_GetDeviceCapabilitiesFromId', 'I have it in wurfl_agents cache, done', LOG_INFO);
+		if ( in_array($_id, $this->_pwurple_agents) ) {
+			$this->_toLog('_GetDeviceCapabilitiesFromId', 'I have it in pwurple_agents cache, done', LOG_INFO);
 			// If the device for this id does not exist, and we use multicache,
 			// attempt to load the cache entry that matches the current id.
 			if ( ! isset( $this->_wurfl['devices'][$_id] ) && WURFL_USE_MULTICACHE ) {
@@ -255,8 +255,8 @@ class wurfl_class {
 			}
 			return $this->_wurfl['devices'][$_id];
 		}
-		$this->_toLog('_GetDeviceCapabilitiesFromId', "the id $_id is not present in wurfl_agents", LOG_ERR);
-		die("the id $_id is not present in wurfl_agents");
+		$this->_toLog('_GetDeviceCapabilitiesFromId', "the id $_id is not present in pwurple_agents", LOG_ERR);
+		die("the id $_id is not present in pwurple_agents");
 		// I should never get here!!
 		return false;
 	}
@@ -275,7 +275,7 @@ class wurfl_class {
 		// Would be cool to log user agent and headers to future use to feed WURFL
 		// Resetting properties
 		$this->user_agent = '';
-		$this->wurfl_agent = '';
+		$this->pwurple_agent = '';
 		$this->id = '';
 		$this->GUI = false;
 		$this->brand = '';
@@ -334,13 +334,13 @@ class wurfl_class {
 				$this->_toLog('GetDeviceCapabilitiesFromAgent', 'cache enabled, WURFL is not loaded, now loading', LOG_INFO);
 				if ( $this->_cacheIsValid() ) {
 					$this->_toLog('GetDeviceCapabilitiesFromAgent', 'loading WURFL from cache', LOG_INFO);
-					list($cache_stat, $this->_wurfl, $this->_wurfl_agents) = load_cache();
+					list($cache_stat, $this->_wurfl, $this->_pwurple_agents) = load_cache();
 				} else {
 					$this->_toLog('GetDeviceCapabilitiesFromAgent', 'loading WURFL from XML', LOG_INFO);
 					$xml_info = parse();
 					$cache_stat = $xml_info[0];
 					$this->_wurfl = $xml_info[1];
-					$this->_wurfl_agents = $xml_info[2];
+					$this->_pwurple_agents = $xml_info[2];
 				}
 			}
 		} else if ( WURFL_AUTOLOAD === false ) {
@@ -350,33 +350,33 @@ class wurfl_class {
 				$xml_info = parse();
 				$cache_stat = $xml_info[0];
 				$this->_wurfl = $xml_info[1];
-				$this->_wurfl_agents = $xml_info[2];
+				$this->_pwurple_agents = $xml_info[2];
 			}
 		} else {
 				// If I'm here it means cache is disabled and autoload is on
-				global $wurfl, $wurfl_agents;
+				global $wurfl, $pwurple_agents;
 				$this->_wurfl = $wurfl;
-				$this->_wurfl_agents = $wurfl_agents;
+				$this->_pwurple_agents = $pwurple_agents;
 		}
 		
 		$_ua = $_user_agent;
 		$_ua_len = strlen($_ua);
-		$_wurfl_user_agents = array_keys($this->_wurfl_agents);
-		// Searching in wurfl_agents
+		$_pwurple_user_agents = array_keys($this->_pwurple_agents);
+		// Searching in pwurple_agents
 		// The user_agent should not become shorter than 4 characters
 		$this->_toLog('GetDeviceCapabilitiesFromAgent', 'Searching in the agent database for '.$_ua, LOG_INFO);
 		// Search for an exact match first
-		if ( in_array($_ua, $_wurfl_user_agents) ) {
+		if ( in_array($_ua, $_pwurple_user_agents) ) {
 			$this->user_agent = $_ua;
-			$this->wurfl_agent = $_ua;
-			$this->id = $this->_wurfl_agents[$_ua];
+			$this->pwurple_agent = $_ua;
+			$this->id = $this->_pwurple_agents[$_ua];
 			// calling FullCapabilities to define $this->capabilities
 			$this->_GetFullCapabilities($this->id);
 			$this->browser_is_wap = $this->capabilities['product_info']['is_wireless_device'];
 			$this->brand = $this->capabilities['product_info']['brand_name'];
 			$this->model = $this->capabilities['product_info']['model_name'];
-			reset($this->_wurfl_agents);
-			reset($_wurfl_user_agents);
+			reset($this->_pwurple_agents);
+			reset($_pwurple_user_agents);
 			if ( WURFL_USE_CACHE ) {
 				$this->_WriteFastAgentToId();
 			}
@@ -386,30 +386,30 @@ class wurfl_class {
 
 		// I request to set a short list of UA's among which I should search an unknown user agent
 		$_short_ua_len = 4;
-		$_set_short_wurfl_ua = true;
+		$_set_short_pwurple_ua = true;
 		$_last_good_short_ua = array();
 		while ( $_ua_len > 4 ) {
-			$_short_wurfl_ua = array();
+			$_short_pwurple_ua = array();
 			$_tmp_short_ua = substr($_ua, 0, $_short_ua_len); // The current user agent's first chars
 			// DEBUG fast search echo "_tmp_short_ua=$_tmp_short_ua ";
-			foreach ( $_wurfl_user_agents as $_x ) {
+			foreach ( $_pwurple_user_agents as $_x ) {
 				// If it was requested to generate a short list of user agents AND the first
 				//  characters of the searched user agent and the user agent in WURFL match,
 				//  I add the current ID to the short list
-				if ( $_set_short_wurfl_ua === true && substr($_x, 0, $_short_ua_len) == $_tmp_short_ua )
-					$_short_wurfl_ua[] = $_x;
+				if ( $_set_short_pwurple_ua === true && substr($_x, 0, $_short_ua_len) == $_tmp_short_ua )
+					$_short_pwurple_ua[] = $_x;
 
 				if ( substr($_x, 0, $_ua_len) == $_ua ) {
 					$this->user_agent = $_user_agent;
-					$this->wurfl_agent = $_x;
-					$this->id = $this->_wurfl_agents[$_x];
+					$this->pwurple_agent = $_x;
+					$this->id = $this->_pwurple_agents[$_x];
 					// calling FullCapabilities to define $this->capabilities
 					$this->_GetFullCapabilities($this->id);
 					$this->browser_is_wap = $this->capabilities['product_info']['is_wireless_device'];
 					$this->brand = $this->capabilities['product_info']['brand_name'];
 					$this->model = $this->capabilities['product_info']['model_name'];
-					reset($this->_wurfl_agents);
-					reset($_wurfl_user_agents);
+					reset($this->_pwurple_agents);
+					reset($_pwurple_user_agents);
 					if ( WURFL_USE_CACHE ) {
 						$this->_WriteFastAgentToId();
 					}
@@ -418,31 +418,31 @@ class wurfl_class {
 			} 
 			// If the list of user agents that match the first 4 chars of the current user
 			//  agent is empty I can quit searching
-			if ( $_short_ua_len == 4 && count($_short_wurfl_ua) == 0 ) {
+			if ( $_short_ua_len == 4 && count($_short_pwurple_ua) == 0 ) {
 				// DEBUG fast search echo "no match even for the first 4 chars<br>\n";
 				break;
-			} else if ( count($_short_wurfl_ua) == 0 ) {
+			} else if ( count($_short_pwurple_ua) == 0 ) {
 				// I restore the last good list of short user agents
-				$_wurfl_user_agents = $_last_good_short_ua;
+				$_pwurple_user_agents = $_last_good_short_ua;
 				// DEBUG fast search echo "restoring last_good_short_ua";
 				// I won't continue building a new short user agent list (longer
 				//  than this)
-				$_set_short_wurfl_ua = false; 
+				$_set_short_pwurple_ua = false; 
 			} else {
 				// This is the last list of user agents that matched the first part of
 				//  the agent
-				$_last_good_short_ua = $_short_wurfl_ua;
+				$_last_good_short_ua = $_short_pwurple_ua;
 				// Next round I search for a short_ua 1 char longer
 				$_short_ua_len++;
 				// I will search the user agent among a shorter list at the next round!!
-				$_wurfl_user_agents = $_short_wurfl_ua;
-				// DEBUG fast search echo "short list has ".count($_short_wurfl_ua)." elements";
+				$_pwurple_user_agents = $_short_pwurple_ua;
+				// DEBUG fast search echo "short list has ".count($_short_pwurple_ua)." elements";
 			}
 
 			// shortening the agent by one each time
 			$_ua = substr($_ua, 0, -1);
 			$_ua_len--;
-			reset($_wurfl_user_agents);
+			reset($_pwurple_user_agents);
 			// DEBUG fast search echo "<br>\n";
 		}
 
@@ -450,23 +450,23 @@ class wurfl_class {
 		if ( strstr($_user_agent, 'UP.Browser/') && strstr($_user_agent, '(GUI)') ) {
 			$this->browser_is_wap = true;
 			$this->user_agent = $_user_agent;
-			$this->wurfl_agent = 'upgui_generic';
+			$this->pwurple_agent = 'upgui_generic';
 			$this->id = 'upgui_generic';
 		} else if ( strstr($_user_agent, 'UP.Browser/') ) {
 			$this->browser_is_wap = true;
 			$this->user_agent = $_user_agent;
-			$this->wurfl_agent = 'uptext_generic';
+			$this->pwurple_agent = 'uptext_generic';
 			$this->id = 'uptext_generic';
 		} else if ( isset( $_SERVER['HTTP_ACCEPT'] ) && (eregi('wml', $_SERVER['HTTP_ACCEPT']) || eregi('wap', $_SERVER['HTTP_ACCEPT'])) ) {
 			$this->browser_is_wap = true;
 			$this->user_agent = $_user_agent;
-			$this->wurfl_agent = 'generic';
+			$this->pwurple_agent = 'generic';
 			$this->id = 'generic';
 		} else {
 			$this->_toLog('GetDeviceCapabilitiesFromAgent', 'This should not be a WAP device, quitting', LOG_WARNING);
 			$this->browser_is_wap=false;
 			$this->user_agent = $_user_agent;
-			$this->wurfl_agent = 'generic';
+			$this->pwurple_agent = 'generic';
 			$this->id = 'generic';
 			return true;
 		}
@@ -505,7 +505,7 @@ class wurfl_class {
 	}
 
 	/**
-	 * Saves to file the correspondence between user_agent and wurfl_id
+	 * Saves to file the correspondence between user_agent and pwurple_id
 	 *
 	 * @access private
 	 *
@@ -527,7 +527,7 @@ class wurfl_class {
 			$cached_agents = Array();
 		} else {
 			// $cached_agents[0]['user_agent'] = 'SIE-S45/00'; //ua completo
-			// $cached_agents[0]['wurfl_agent'] = 'SIE-S45/00'; //ua nel WURFL
+			// $cached_agents[0]['pwurple_agent'] = 'SIE-S45/00'; //ua nel WURFL
 			// $cached_agents[0]['id'] = 'sie_s45_ver1';
 			// $cached_agents[0]['is_wap'] = true;
 			include(WURFL_AGENT2ID_FILE);
@@ -541,7 +541,7 @@ class wurfl_class {
 		}
 		$new_item_id = count($cached_agents);
 		$cached_agents[$new_item_id]['user_agent'] = $_ua; // full UA
-//		$cached_agents[$new_item_id]['wurfl_agent'] = $this->wurfl_agent; // corresponding UA stored in WURFL
+//		$cached_agents[$new_item_id]['pwurple_agent'] = $this->pwurple_agent; // corresponding UA stored in WURFL
 //		$cached_agents[$new_item_id]['id'] = $this->id; // WURFL unique id
 		$cached_agents[$new_item_id]['is_wap'] = true;
 		$cached_agents[$new_item_id]['capabilities'] = $this->capabilities;
@@ -589,12 +589,12 @@ class wurfl_class {
 			return;
 		}
 
-		$this->_toLog('_WriteFastAgentToId', 'Done caching user_agent to wurfl_id', LOG_INFO);
+		$this->_toLog('_WriteFastAgentToId', 'Done caching user_agent to pwurple_id', LOG_INFO);
 		return;
 	}
 
 	/**
-	 * Reads the file with the correspondence between user_agent and wurfl_id
+	 * Reads the file with the correspondence between user_agent and pwurple_id
 	 *
 	 * @param $_ua	device's user_agent
 	 *
@@ -617,7 +617,7 @@ class wurfl_class {
 		foreach ( $cached_agents as $device ) {
 			if ( $device['user_agent'] == $_ua ) {
 				$this->user_agent = $device['user_agent'];
-				$this->wurfl_agent = $device['capabilities']['user_agent'];
+				$this->pwurple_agent = $device['capabilities']['user_agent'];
 				$this->id = $device['capabilities']['id'];
 				$this->browser_is_wap = $device['is_wap'];
 				$this->capabilities = $device['capabilities'];
@@ -644,16 +644,16 @@ class wurfl_class {
 			return true;
 
 		// WURFL hasn't been loaded into memory, I'll do it now
-		$wurfl_stat = filemtime(WURFL_FILE);
+		$pwurple_stat = filemtime(WURFL_FILE);
 		if ( defined('WURFL_PATCH_FILE') && file_exists(WURFL_PATCH_FILE) ) {
 			$patch_stat = filemtime(WURFL_PATCH_FILE);
-			if ( $patch_stat > $wurfl_stat ) {
-				// if the patch file is newer than the WURFL I set wurfl_stat to that time
-				$wurfl_stat = $patch_stat;
+			if ( $patch_stat > $pwurple_stat ) {
+				// if the patch file is newer than the WURFL I set pwurple_stat to that time
+				$pwurple_stat = $patch_stat;
 			}
 		}
 		$cache_stat = stat_cache();
-		if ( $wurfl_stat <= $cache_stat ) {
+		if ( $pwurple_stat <= $cache_stat ) {
 			return true;
 		} else {
 			$this->_toLog('_cacheIsValid', 'cache file is outdated', LOG_INFO);

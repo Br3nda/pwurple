@@ -24,8 +24,8 @@
  * ***** END LICENSE BLOCK ***** */
 
 /*
- * $Id: wurfl_config.php,v 1.2 2006/02/28 13:25:02 atrasatti Exp $
- * $RCSfile: wurfl_config.php,v $ v2.1 beta3 (Feb, 28 2006)
+ * $Id: pwurple_config.php,v 1.2 2006/02/28 13:25:02 atrasatti Exp $
+ * $RCSfile: pwurple_config.php,v $ v2.1 beta3 (Feb, 28 2006)
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
  * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
  *
@@ -40,8 +40,8 @@
  * WURFL_CONFIG	used in other libraries if the configuration was done
  * DATADIR			where all data is stored (wurfl.xml, cache file, logs, etc)
  * WURFL_FILE		string, Full path and filename of wurfl.xml
- * WURFL_PARSER_FILE	string, Full path and filename of wurfl_parser.php
- * WURFL_CLASS_FILE	string, Full path and filename of wurfl_class.php
+ * WURFL_PARSER_FILE	string, Full path and filename of pwurple_parser.php
+ * WURFL_CLASS_FILE	string, Full path and filename of pwurple_class.php
  * WURFL_USE_CACHE	boolean, true if I want to use a cache file
  * WURFL_USE_MULTICACHE	boolean, true if you want to use Multicache files
  *				instead of a single BIG cache file
@@ -59,7 +59,7 @@
  *				using MULICACHE because of the high number of files to be updated.
  *				Race conditions are highly possible to happen.
  * WURFL_PATCH_FILE	string, optional patch file for WURFL
- * WURFL_AGENT2ID_FILE	string, used by wurfl_class.php. needs to be removed
+ * WURFL_AGENT2ID_FILE	string, used by pwurple_class.php. needs to be removed
  *				when a new WURFL is found
  * MAX_UA_CACHE	integer, max number of user agents to store in
  *				WURFL_AGENT2ID_FILE. Too high limits might give the opposite effect.
@@ -90,11 +90,11 @@ define("WURFL_CONFIG", true);
 // Where all data is stored (wurfl.xml, cache file, logs, etc)
 define("DATADIR", '../data/');
 
-// Path and filename of wurfl_parser.php
-define("WURFL_PARSER_FILE", './wurfl_parser.php');
+// Path and filename of pwurple_parser.php
+define("WURFL_PARSER_FILE", './pwurple_parser.php');
 
-// Path and filename of wurfl_class.php
-define("WURFL_CLASS_FILE", './wurfl_class.php');
+// Path and filename of pwurple_class.php
+define("WURFL_CLASS_FILE", './pwurple_class.php');
 
 // Path and name of the wurfl
 define ("WURFL_FILE", DATADIR."wurfl.xml");
@@ -152,7 +152,7 @@ define ("WURFL_AGENT2ID_FILE", DATADIR."agent2id.php4");
 define ("MAX_UA_CACHE", 30);
 
 // Configure a patch file
-//define("WURFL_PATCH_FILE", DATADIR.'wurfl_patch.xml');
+//define("WURFL_PATCH_FILE", DATADIR.'pwurple_patch.xml');
 // Enable patch debug, NOT SUGGESTED for production environments
 define("WURFL_PATCH_DEBUG", false);
 ?>

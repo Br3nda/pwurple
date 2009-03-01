@@ -25,7 +25,7 @@
 
 /*
  * $Id$
- * $RCSfile: wurfl_parser.php,v $ v2.1 beta3 (Feb, 28 2006)
+ * $RCSfile: pwurple_parser.php,v $ v2.1 beta3 (Feb, 28 2006)
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
  * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
  *
@@ -80,13 +80,13 @@
  */
 
 if ( !defined('WURFL_CONFIG') )
-	@require_once('./wurfl_config.php');
+	@require_once('./pwurple_config.php');
 
 if ( !defined('WURFL_CONFIG') )
 	die("NO CONFIGURATION");
 
 $wurfl = array();
-$wurfl_agents = array();
+$pwurple_agents = array();
 $patch_params = Array();
 
 // Author: Herouth Maoz
@@ -107,12 +107,12 @@ function var_export_bug()
 function checkpatch($name, $attr) {
 	global $wurfl, $patch_params, $checkpatch_result;
 
-	if ( $name == 'wurfl_patch' ) {
-		$checkpatch_result['wurfl_patch'] = true;
+	if ( $name == 'pwurple_patch' ) {
+		$checkpatch_result['pwurple_patch'] = true;
 		return true;
-	} else if ( !$checkpatch_result['wurfl_patch'] ) {
-		$checkpatch_result['wurfl_patch'] = false;
-		wurfl_log('checkpatch', "no wurfl_patch tag! Patch file ignored.");
+	} else if ( !$checkpatch_result['pwurple_patch'] ) {
+		$checkpatch_result['pwurple_patch'] = false;
+		pwurple_log('checkpatch', "no pwurple_patch tag! Patch file ignored.");
 		return false;
 	}
 	if ( $name == 'devices' ) {
@@ -120,7 +120,7 @@ function checkpatch($name, $attr) {
 		return true;
 	} else if ( !$checkpatch_result['devices'] ) {
 		$checkpatch_result['devices'] = false;
-		wurfl_log('checkpatch', "no devices tag! Patch file ignored.");
+		pwurple_log('checkpatch', "no devices tag! Patch file ignored.");
 		return false;
 	}
 	if ( $name == 'device' ) {
@@ -142,7 +142,7 @@ function checkpatch($name, $attr) {
 		 */
 		if ( isset($checkpatch_result['device']['id'][$attr["id"]]['patch'])
 			&& !$checkpatch_result['device']['id'][$attr["id"]]['patch'] ) {
-			wurfl_log('checkpatch', "ERROR:".$checkpatch_result['device']['id'][$attr["id"]]['reason']);
+			pwurple_log('checkpatch', "ERROR:".$checkpatch_result['device']['id'][$attr["id"]]['reason']);
 			return false;
 		}
 	}
@@ -155,12 +155,12 @@ function startElement($parser, $name, $attr) {
 	if ( $check_patch_params ) {
 		// if the patch file checks fail I don't merge info retrived
 		if ( !checkpatch($name, $attr) ) {
-			wurfl_log('startElement', "error on $name, ".$attr['id']);
+			pwurple_log('startElement', "error on $name, ".$attr['id']);
 			$curr_device = 'dump_anything';
 			return;
 		} else if ( $curr_device == 'dump_anything' && $name != 'device' ) {
 			// this capability is referred to a device that was erroneously defined for some reason, skip it
-			wurfl_log('startElement', $name." cannot be merged, the device was skipped because of an error");
+			pwurple_log('startElement', $name." cannot be merged, the device was skipped because of an error");
 			return;
 		}
 	}
@@ -221,7 +221,7 @@ function startElement($parser, $name, $attr) {
 				}
 				if ( strlen($patch_values) > 0 )
 					$log_string .= ': '.$patch_values;
-				wurfl_log('parse', $log_string);
+				pwurple_log('parse', $log_string);
 			}
 			$curr_device=$attr["id"];
 			break;
@@ -243,13 +243,13 @@ function startElement($parser, $name, $attr) {
 				}
 			}
 			if ( $curr_device != 'generic' && !isset($wurfl["devices"]['generic'][$curr_group][$attr["name"]]) ) {
-				wurfl_log('parse', 'Capability '.$attr["name"].' in group '.$curr_group.' is not defined in the generic device, can\'t set it for '.$curr_device.'.');
+				pwurple_log('parse', 'Capability '.$attr["name"].' in group '.$curr_group.' is not defined in the generic device, can\'t set it for '.$curr_device.'.');
 			} else {
 				if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
 					if ( isset($wurfl["devices"][$curr_device][$curr_group][$attr["name"]]) ) {
-						wurfl_log('parse', $curr_device.': updating '.$attr["name"].', '.$wurfl["devices"][$curr_device][$curr_group][$attr["name"]].'=>'.$value);
+						pwurple_log('parse', $curr_device.': updating '.$attr["name"].', '.$wurfl["devices"][$curr_device][$curr_group][$attr["name"]].'=>'.$value);
 					} else {
-						wurfl_log('parse', $curr_device.': setting '.$attr["name"].'='.$value);
+						pwurple_log('parse', $curr_device.': setting '.$attr["name"].'='.$value);
 					}
 				}
 				$wurfl["devices"][$curr_device][$curr_group][$attr["name"]]=$value;
@@ -260,7 +260,7 @@ function startElement($parser, $name, $attr) {
 			if ( !isset($wurfl["devices"]) )
 				$wurfl["devices"]=array();
 			break;
-		case "wurfl_patch":
+		case "pwurple_patch":
 			// opening tag of the patch file
 		case "wurfl":
 			// opening tag of the WURFL, nothing to do
@@ -306,12 +306,12 @@ function characterData($parser, $data) {
 function load_cache() {
 	// Setting default values
 	$cache_stat = 0;
-	$wurfl = $wurfl_agents = array();
+	$wurfl = $pwurple_agents = array();
 
 	if ( WURFL_USE_CACHE && file_exists(CACHE_FILE) ) {
 		include(CACHE_FILE);
 	}
-	return Array($cache_stat, $wurfl, $wurfl_agents);
+	return Array($cache_stat, $wurfl, $pwurple_agents);
 }
 
 function stat_cache() {
@@ -323,7 +323,7 @@ function stat_cache() {
 }
 
 function parse() {
-	global $wurfl, $wurfl_stat, $check_patch_params, $checkpatch_result;
+	global $wurfl, $pwurple_stat, $check_patch_params, $checkpatch_result;
 	$wurfl = Array();
 
 	$xml_parser = xml_parser_create();
@@ -331,11 +331,11 @@ function parse() {
 	xml_set_element_handler($xml_parser, "startElement", "endElement");
 	xml_set_character_data_handler($xml_parser, "characterData"); 
 	if ( !file_exists(WURFL_FILE) ) {
-		wurfl_log('parse', WURFL_FILE." does not exist");
+		pwurple_log('parse', WURFL_FILE." does not exist");
 		die(WURFL_FILE." does not exist");
 	}
 	if (!($fp = fopen(WURFL_FILE, "r"))) {
-		wurfl_log('parse', "could not open XML input");
+		pwurple_log('parse', "could not open XML input");
 		die("could not open XML input");
 	}
 
@@ -356,16 +356,16 @@ function parse() {
 
 	$check_patch_params = false;
 	if ( defined('WURFL_PATCH_FILE') && file_exists(WURFL_PATCH_FILE) ) {
-		wurfl_log('parse', "Trying to load XML patch file: ".WURFL_PATCH_FILE);
+		pwurple_log('parse', "Trying to load XML patch file: ".WURFL_PATCH_FILE);
 		$check_patch_params = true;
 		$xml_parser = xml_parser_create();
 		xml_parser_set_option($xml_parser, XML_OPTION_CASE_FOLDING, false);
 		xml_set_element_handler($xml_parser, "startElement", "endElement");
 		xml_set_character_data_handler($xml_parser, "characterData"); 
 		if (!($fp = fopen(WURFL_PATCH_FILE, "r"))) {
-			wurfl_log('parse', "could not open XML patch file: ".WURFL_PATCH_FILE);
+			pwurple_log('parse', "could not open XML patch file: ".WURFL_PATCH_FILE);
 		}
-		wurfl_log('parse', "Loaded, now parsing");
+		pwurple_log('parse', "Loaded, now parsing");
 		while ($data = fread($fp, 4096)) {
 		    if (!xml_parse($xml_parser, $data, feof($fp))) {
 			die(sprintf("XML error: %s at line %d",
@@ -377,9 +377,9 @@ function parse() {
 		xml_parser_free($xml_parser);
 		// logging? $checkpatch_result['device']['id']
 	} else if ( defined('WURFL_PATCH_FILE') && !file_exists(WURFL_PATCH_FILE) ) {
-		wurfl_log('parse', WURFL_PATCH_FILE." does not exist");
+		pwurple_log('parse', WURFL_PATCH_FILE." does not exist");
 	} else {
-		wurfl_log('parse', "No XML patch file defined");
+		pwurple_log('parse', "No XML patch file defined");
 	}
 
 
@@ -394,39 +394,39 @@ function parse() {
 	// I check if var_export loses any empty key, in this case I force the generic
 	// device.
 	if ( var_export_bug() ) {
-		$wurfl_agents['generic'] = 'generic';
+		$pwurple_agents['generic'] = 'generic';
 	}
 	foreach($devices as $one) {
-		$wurfl_agents[$one['user_agent']] = $one['id'];
+		$pwurple_agents[$one['user_agent']] = $one['id'];
 	}
 
 	reset($wurfl);
-	reset($wurfl_agents);
+	reset($pwurple_agents);
 	if ( WURFL_USE_CACHE ) {
 		if ( defined("WURFL_AGENT2ID_FILE") && file_exists(WURFL_AGENT2ID_FILE) && !is_writeable(WURFL_AGENT2ID_FILE) ) {
-			wurfl_log('parse', "ERROR: Unable to remove ".WURFL_AGENT2ID_FILE);
+			pwurple_log('parse', "ERROR: Unable to remove ".WURFL_AGENT2ID_FILE);
 			//die ('Unable to remove '.WURFL_AGENT2ID_FILE);
 			return;
 		}
-		if ( isset($wurfl_stat) ) {
-			$cache_stat = $wurfl_stat;
+		if ( isset($pwurple_stat) ) {
+			$cache_stat = $pwurple_stat;
 		} else {
-			$cache_stat = $wurfl_stat = filemtime(WURFL_FILE);
+			$cache_stat = $pwurple_stat = filemtime(WURFL_FILE);
 			if ( defined('WURFL_PATCH_FILE') && file_exists(WURFL_PATCH_FILE) ) {
 				$patch_stat = filemtime(WURFL_PATCH_FILE);
-				if ( $patch_stat > $wurfl_stat ) {
-					// if the patch file is newer than the WURFL I set wurfl_stat to that time
-					$wurfl_stat = $patch_stat;
+				if ( $patch_stat > $pwurple_stat ) {
+					// if the patch file is newer than the WURFL I set pwurple_stat to that time
+					$pwurple_stat = $patch_stat;
 				}
 			}
 		}
 		if ( WURFL_USE_MULTICACHE ) {
 			// If using Multicache remove old cache files
-			$wurfl_temp_devices = $wurfl['devices'];
+			$pwurple_temp_devices = $wurfl['devices'];
 			$wurfl['devices'] = array();
 			//Attempt to remove all existing multicache files
 			if ( defined("MULTICACHE_DIR") && is_dir(MULTICACHE_DIR) && !is_writeable(MULTICACHE_DIR) ) {
-				wurfl_log('parse', "ERROR: Unable to remove files from".MULTICACHE_DIR);
+				pwurple_log('parse', "ERROR: Unable to remove files from".MULTICACHE_DIR);
 				return;
 			}
 			// Get all the agent file names in the multicache directory. Use
@@ -459,26 +459,26 @@ function parse() {
 				|| ($php_main_version == 4 && $php_subversion == 3 && $php_subsubversion > 2) ) {
 
 			if ( !WURFL_USE_MULTICACHE ) {
-				$wurfl_to_file = var_export($wurfl, true);
+				$pwurple_to_file = var_export($wurfl, true);
 			}
-			$wurfl_agents_to_file = var_export($wurfl_agents, true);
+			$pwurple_agents_to_file = var_export($pwurple_agents, true);
 			$cache_stat_to_file = var_export($cache_stat, true);
 			fwrite($fp_cache, "\$cache_stat=$cache_stat_to_file;\n");
 			if ( !WURFL_USE_MULTICACHE ) {
-				fwrite($fp_cache, "\$wurfl=$wurfl_to_file;\n");
+				fwrite($fp_cache, "\$wurfl=$pwurple_to_file;\n");
 			}
-			fwrite($fp_cache, "\$wurfl_agents=$wurfl_agents_to_file;\n");
+			fwrite($fp_cache, "\$pwurple_agents=$pwurple_agents_to_file;\n");
 		} else {
 			if ( !WURFL_USE_MULTICACHE ) {
-				$wurfl_to_file = urlencode(serialize($wurfl));
+				$pwurple_to_file = urlencode(serialize($wurfl));
 			}
-			$wurfl_agents_to_file = urlencode(serialize($wurfl_agents));
+			$pwurple_agents_to_file = urlencode(serialize($pwurple_agents));
 			$cache_stat_to_file = urlencode(serialize($cache_stat));
 			fwrite($fp_cache, "\$cache_stat=unserialize(urldecode(\"". $cache_stat_to_file ."\"));\n");
 			if ( !WURFL_USE_MULTICACHE ) {
-				fwrite($fp_cache, "\$wurfl=unserialize(urldecode(\"". $wurfl_to_file ."\"));\n");
+				fwrite($fp_cache, "\$wurfl=unserialize(urldecode(\"". $pwurple_to_file ."\"));\n");
 			}
-			fwrite($fp_cache, "\$wurfl_agents=unserialize(urldecode(\"". $wurfl_agents_to_file ."\"));\n");
+			fwrite($fp_cache, "\$pwurple_agents=unserialize(urldecode(\"". $pwurple_agents_to_file ."\"));\n");
 		}
 		fwrite($fp_cache, "?>\n");
 		fclose($fp_cache);
@@ -487,7 +487,7 @@ function parse() {
 		}
 		if ( WURFL_USE_MULTICACHE ) {
 			// Return the capabilities to the wurfl structure
-			$wurfl['devices'] = &$wurfl_temp_devices;
+			$wurfl['devices'] = &$pwurple_temp_devices;
 			// Write multicache files
 			if ( @FORCED_UPDATE === true )
 				$path = MULTICACHE_TMP_DIR;
@@ -495,7 +495,7 @@ function parse() {
 				$path = MULTICACHE_DIR;
 			if ( !is_dir($path) )
 				@mkdir($path);
-			foreach ( $wurfl_temp_devices as $id => $capabilities ) {
+			foreach ( $pwurple_temp_devices as $id => $capabilities ) {
 				$fname = urlencode( $id );
 				$varname = addcslashes( $id, "'\\" );
 
@@ -503,11 +503,11 @@ function parse() {
 
 				fwrite($fp_cache, "<?php\n");
                                 if ( ($php_main_version == 4 && $php_subversion > 2) || $php_main_version > 4 ) {
-					$wurfl_to_file = var_export($capabilities, true);
-					fwrite($fp_cache, "\$_cached_devices['$varname']=$wurfl_to_file;\n");
+					$pwurple_to_file = var_export($capabilities, true);
+					fwrite($fp_cache, "\$_cached_devices['$varname']=$pwurple_to_file;\n");
 				} else {
-					$wurfl_to_file = urlencode(serialize($capabilities));
-					fwrite($fp_cache, "\$_cached_devices['$varname']=unserialize(urldecode(\"". $wurfl_to_file ."\"));\n");
+					$pwurple_to_file = urlencode(serialize($capabilities));
+					fwrite($fp_cache, "\$_cached_devices['$varname']=unserialize(urldecode(\"". $pwurple_to_file ."\"));\n");
 				}
 				fwrite($fp_cache, "?>\n");
 				fclose($fp_cache);
@@ -529,11 +529,11 @@ function parse() {
 		$cache_stat = 0;
 	}
 
-	return Array($cache_stat, $wurfl, $wurfl_agents);
+	return Array($cache_stat, $wurfl, $pwurple_agents);
 
 } // end of function parse
 
-function wurfl_log($func, $msg, $logtype=3) {
+function pwurple_log($func, $msg, $logtype=3) {
 	// Thanks laacz
 	$_textToLog = date('r')." [".php_uname('n')." ".getmypid()."]"."[$func] ".$msg;
 
@@ -547,29 +547,29 @@ function wurfl_log($func, $msg, $logtype=3) {
 }
 
 if ( !file_exists(WURFL_FILE) ) {
-	wurfl_log('main', WURFL_FILE." does not exist");
+	pwurple_log('main', WURFL_FILE." does not exist");
 	die(WURFL_FILE." does not exist");
 }
 
 if ( WURFL_AUTOLOAD === true ) {
-	$wurfl_stat = filemtime(WURFL_FILE);
+	$pwurple_stat = filemtime(WURFL_FILE);
 	$cache_stat = stat_cache();
 	if ( defined('WURFL_PATCH_FILE') && file_exists(WURFL_PATCH_FILE) ) {
 		$patch_stat = filemtime(WURFL_PATCH_FILE);
 	} else {
-		$patch_stat = $wurfl_stat;
+		$patch_stat = $pwurple_stat;
 	}
-	if (WURFL_USE_CACHE && $wurfl_stat <= $cache_stat && $patch_stat <= $cache_stat) {
+	if (WURFL_USE_CACHE && $pwurple_stat <= $cache_stat && $patch_stat <= $cache_stat) {
 		// cache file is updated
-		//echo "wurfl date = ".$wurfl_stat."<br>\n";
+		//echo "wurfl date = ".$pwurple_stat."<br>\n";
 		//echo "patch date = ".$patch_stat."<br>\n";
 		//echo "cache date = ".$cache_stat."<br>\n";
 
-		list($cache_stat, $wurfl, $wurfl_agents) = load_cache();
+		list($cache_stat, $wurfl, $pwurple_agents) = load_cache();
 
 		// echo "cache loaded";
 	} else {
-		list($cache_stat, $wurfl, $wurfl_agents) = parse();
+		list($cache_stat, $wurfl, $pwurple_agents) = parse();
 	}
 }
 ?>
