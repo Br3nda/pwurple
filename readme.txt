@@ -1,12 +1,17 @@
-All the software described here was developed by Andrea Trasatti and is being
-distributed for free to be use with WURFL.
-Multicache implementation by Herouth Maoz ( herouth AT spamcop DOT net )
-If you have comments or requests, don't hesitate to contact me:
-atrasatti AT users DOT sourceforge DOT net
+Pwurple maintained by Brenda Wallace <shiny@cpan.org>
+
+Based on software by developed by Andrea Trasatti <atrasatti@users.sourceforge.net>
+
+Multicache implementation by Herouth Maoz <herouth@spamcop.net>
 
 ================
 Revision history
 ================
+
+V3.0 
+- Project forked. wurfl_php has released final version. Project renamed to pwurple.
+- Goals are:  1) php5-ification. 2) Small memory footprint.
+
 
 V2.1
 - Added patch parameter for ease of initial configuration in wurfl_config.php
