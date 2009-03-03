@@ -1,5 +1,5 @@
 <?php
-/* ***** BEGIN LICENSE BLOCK *****
+/**
  * Version: MPL 1.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
@@ -21,9 +21,10 @@
  *
  * Contributor(s): Herouth Maoz.
  *
- * ***** END LICENSE BLOCK ***** */
+ * @licence  MPL
+ */
 
-/*
+/**
  * $Id: pwurple_config.php,v 1.2 2006/02/28 13:25:02 atrasatti Exp $
  * $RCSfile: pwurple_config.php,v $ v2.1 beta3 (Feb, 28 2006)
  * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
@@ -31,7 +32,7 @@
  *
 */
 
-/*
+/**
  *
  * This is the configuration file for WURFL PHP libraries. You may use this file
  * or include these defines into your main configuration file.
@@ -82,13 +83,14 @@
  * If you like it and use it, please let me know or contact the wmlprogramming
  * mailing list: wmlprogramming@yahoogroups.com
  *
+ * @file 
  */
 
 // Single define to be checked when starting the parser and/or the class
 define("WURFL_CONFIG", true);
 
 // Where all data is stored (wurfl.xml, cache file, logs, etc)
-define("DATADIR", '../data/');
+define("DATADIR", $LIBDIR .'pwurple/');
 
 // Path and filename of pwurple_parser.php
 define("WURFL_PARSER_FILE", './pwurple_parser.php');
@@ -108,7 +110,7 @@ define ("WURFL_LOG_FILE", DATADIR."wurfl.log");
 define ("LOG_LEVEL", LOG_INFO);
 
 // Set this true if you want to use cache. Strongly suggested
-define ("WURFL_USE_CACHE", true);
+define ("WURFL_USE_CACHE", false);
 
 // Set this true if you want to avoid using cache.php file, and
 // generate a single file for each device user agent and use that as a cache

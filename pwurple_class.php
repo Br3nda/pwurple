@@ -92,7 +92,7 @@ class pwurple_class {
 	 * associative array user_agent=>id
 	 * @var associative array
 	 */
-	var $_pwurple_agents="";
+	var $_wurfl_agents="";
 
 	/**
 	 * device's complete user agent (just in case)
@@ -145,7 +145,7 @@ class pwurple_class {
 	 *
 	 * @var associative array
 	 */
-	var $capabilities=array();
+	var $capabilities = array();
 
 	/**
 	 * Constructor, checks the user agent and sets the variables.
@@ -159,11 +159,12 @@ class pwurple_class {
 	 * @access public
 	 *
 	 */
-	function pwurple_class($wurfl=Array(), $pwurple_agents=Array()) {
+    function pwurple_class() {
+//       $wurfl=Array(), $pwurple_agents=Array()) {
 
-		$this->_wurfl = $wurfl;
-		$this->_pwurple_agents = $pwurple_agents;
-		$this->_toLog('constructor', 'Class Initiated', LOG_NOTICE);
+/*		$this->_wurfl = $wurfl;
+		$this->_wurfl_agents = $pwurple_agents;
+		$this->_toLog('constructor', 'Class Initiated', LOG_NOTICE);*/
 	}
 
 	/**
@@ -226,7 +227,7 @@ class pwurple_class {
 		if ( $_id == 'upgui_generic' ) {
 			$this->GUI = true;
 		}
-		if ( in_array($_id, $this->_pwurple_agents) ) {
+		if ( in_array($_id, $this->_wurfl_agents) ) {
 			$this->_toLog('_GetDeviceCapabilitiesFromId', 'I have it in pwurple_agents cache, done', LOG_INFO);
 			// If the device for this id does not exist, and we use multicache,
 			// attempt to load the cache entry that matches the current id.
@@ -256,7 +257,7 @@ class pwurple_class {
 			return $this->_wurfl['devices'][$_id];
 		}
 		$this->_toLog('_GetDeviceCapabilitiesFromId', "the id $_id is not present in pwurple_agents", LOG_ERR);
-		die("the id $_id is not present in pwurple_agents");
+    error_log("PWURPLE: the id $_id is not present in pwurple_agents");
 		// I should never get here!!
 		return false;
 	}
@@ -334,13 +335,13 @@ class pwurple_class {
 				$this->_toLog('GetDeviceCapabilitiesFromAgent', 'cache enabled, WURFL is not loaded, now loading', LOG_INFO);
 				if ( $this->_cacheIsValid() ) {
 					$this->_toLog('GetDeviceCapabilitiesFromAgent', 'loading WURFL from cache', LOG_INFO);
-					list($cache_stat, $this->_wurfl, $this->_pwurple_agents) = load_cache();
+					list($cache_stat, $this->_wurfl, $this->_wurfl_agents) = load_cache();
 				} else {
 					$this->_toLog('GetDeviceCapabilitiesFromAgent', 'loading WURFL from XML', LOG_INFO);
 					$xml_info = parse();
 					$cache_stat = $xml_info[0];
 					$this->_wurfl = $xml_info[1];
-					$this->_pwurple_agents = $xml_info[2];
+					$this->_wurfl_agents = $xml_info[2];
 				}
 			}
 		} else if ( WURFL_AUTOLOAD === false ) {
@@ -350,18 +351,18 @@ class pwurple_class {
 				$xml_info = parse();
 				$cache_stat = $xml_info[0];
 				$this->_wurfl = $xml_info[1];
-				$this->_pwurple_agents = $xml_info[2];
+				$this->_wurfl_agents = $xml_info[2];
 			}
 		} else {
 				// If I'm here it means cache is disabled and autoload is on
 				global $wurfl, $pwurple_agents;
 				$this->_wurfl = $wurfl;
-				$this->_pwurple_agents = $pwurple_agents;
+				$this->_wurfl_agents = $pwurple_agents;
 		}
 		
 		$_ua = $_user_agent;
 		$_ua_len = strlen($_ua);
-		$_pwurple_user_agents = array_keys($this->_pwurple_agents);
+		$_pwurple_user_agents = array_keys($this->_wurfl_agents);
 		// Searching in pwurple_agents
 		// The user_agent should not become shorter than 4 characters
 		$this->_toLog('GetDeviceCapabilitiesFromAgent', 'Searching in the agent database for '.$_ua, LOG_INFO);
@@ -369,13 +370,13 @@ class pwurple_class {
 		if ( in_array($_ua, $_pwurple_user_agents) ) {
 			$this->user_agent = $_ua;
 			$this->pwurple_agent = $_ua;
-			$this->id = $this->_pwurple_agents[$_ua];
+			$this->id = $this->_wurfl_agents[$_ua];
 			// calling FullCapabilities to define $this->capabilities
 			$this->_GetFullCapabilities($this->id);
 			$this->browser_is_wap = $this->capabilities['product_info']['is_wireless_device'];
 			$this->brand = $this->capabilities['product_info']['brand_name'];
 			$this->model = $this->capabilities['product_info']['model_name'];
-			reset($this->_pwurple_agents);
+			reset($this->_wurfl_agents);
 			reset($_pwurple_user_agents);
 			if ( WURFL_USE_CACHE ) {
 				$this->_WriteFastAgentToId();
@@ -402,13 +403,13 @@ class pwurple_class {
 				if ( substr($_x, 0, $_ua_len) == $_ua ) {
 					$this->user_agent = $_user_agent;
 					$this->pwurple_agent = $_x;
-					$this->id = $this->_pwurple_agents[$_x];
+					$this->id = $this->_wurfl_agents[$_x];
 					// calling FullCapabilities to define $this->capabilities
 					$this->_GetFullCapabilities($this->id);
 					$this->browser_is_wap = $this->capabilities['product_info']['is_wireless_device'];
 					$this->brand = $this->capabilities['product_info']['brand_name'];
 					$this->model = $this->capabilities['product_info']['model_name'];
-					reset($this->_pwurple_agents);
+					reset($this->_wurfl_agents);
 					reset($_pwurple_user_agents);
 					if ( WURFL_USE_CACHE ) {
 						$this->_WriteFastAgentToId();
@@ -667,23 +668,7 @@ class pwurple_class {
 	 * @access private
 	 */
 	function _toLog($func, $text, $requestedLogLevel=LOG_NOTICE){
-		if ( !defined('LOG_LEVEL') || LOG_LEVEL == 0 || ($requestedLogLevel-1) >= LOG_LEVEL ) {
-			return;
-		}
-		if ( $requestedLogLevel == LOG_ERR ) {
-			$warn_banner = 'ERROR: ';
-		} else if ( $requestedLogLevel == LOG_WARNING ) {
-			$warn_banner = 'WARNING: ';
-		} else {
-			$warn_banner = '';
-		}
-		// Thanks laacz
-		$_textToLog = date('r')." [".php_uname('n')." ".getmypid()."]"."[$func] ".$warn_banner . $text;
-		$_logFP = fopen(WURFL_LOG_FILE, "a+");
-		fputs($_logFP, $_textToLog."\n");
-		fclose($_logFP);
-		return;
+    pwurple_log($func, $text, $requestedLogLevel); 
 	}
 
 } 
-?>
