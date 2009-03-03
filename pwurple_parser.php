@@ -86,251 +86,20 @@ if ( !defined('WURFL_CONFIG') ) {
   die("NO CONFIGURATION");
 }
 
-$wurfl = array();
-$pwurple_agents = array();
-$patch_params = Array();
-
-// Author: Herouth Maoz
-// Check if var_export has the bug that eliminates empty string keys. Returns
-// true if the bug exists
-function var_export_bug()
-{
-  if ( ! function_exists( 'var_export' ) ) {
-    return false;
-  }
-  $a = array( '' => '!' );
-  $export_a = var_export( $a, true );
-  eval ( "\$b = $export_a;" );
-  
-  return count( $b ) != count( $a );
-}
-// this function check WURFL patch integrity/validity
-function checkpatch($name, $attr) {
-  global $wurfl, $patch_params, $checkpatch_result;
-  
-  if ( $name == 'pwurple_patch' ) {
-    $checkpatch_result['pwurple_patch'] = true;
-    return true;
-  } else if ( !$checkpatch_result['pwurple_patch'] ) {
-    $checkpatch_result['pwurple_patch'] = false;
-    pwurple_log('checkpatch', "no pwurple_patch tag! Patch file ignored.");
-    return false;
-  }
-  if ( $name == 'devices' ) {
-    $checkpatch_result['devices'] = true;
-    return true;
-  } else if ( !$checkpatch_result['devices'] ) {
-    $checkpatch_result['devices'] = false;
-    pwurple_log('checkpatch', "no devices tag! Patch file ignored.");
-    return false;
-  }
-  if ( $name == 'device' ) {
-    if ( isset($wurfl['devices'][$attr['id']]) ) {
-      if ( $wurfl['devices'][$attr['id']]['user_agent'] != $attr['user_agent'] ) {
-        $checkpatch_result['device']['id'][$attr["id"]]['patch'] = false;
-        $checkpatch_result['device']['id'][$attr["id"]]['reason'] = 'user agent mismatch, orig='.$wurfl['devices'][$attr['id']]['user_agent'].', new='.$attr['user_agent'].', id='.$attr['id'].', fall_back='.$attr['fall_back'];
-      }
-    }
-    /*
-     * checking of the fall_back is disabled. I might define a device's fall_back which will be defined later in the patch file.
-     * fall_backs checking could be done after merging.
-    if ( $attr['id'] == 'generic' && $attr['user_agent'] == '' && $attr['fall_back'] == 'root' ) {
-      // generic device, everything's ok.
-    } else if ( !isset($wurfl['devices'][$attr['fall_back']]) ) {
-      $checkpatch_result['device']['id'][$attr["id"]]['patch'] = false;
-      $checkpatch_result['device']['id'][$attr["id"]]['reason'] .= 'wrong fall_back, id='.$attr['id'].', fall_back='.$attr['fall_back'];
-    }
-     */
-    if ( isset($checkpatch_result['device']['id'][$attr["id"]]['patch'])
-         && !$checkpatch_result['device']['id'][$attr["id"]]['patch'] ) {
-           pwurple_log('checkpatch', "ERROR:".$checkpatch_result['device']['id'][$attr["id"]]['reason']);
-           return false;
-         }
-  }
-  return true;
-}
-
-function startElement($parser, $name, $attr) {
-  global $wurfl, $curr_event, $curr_device, $curr_group, $fp_cache, $check_patch_params, $checkpatch_result;
-  
-  if ( $check_patch_params ) {
-    // if the patch file checks fail I don't merge info retrived
-    if ( !checkpatch($name, $attr) ) {
-      pwurple_log('startElement', "error on $name, ".$attr['id']);
-      $curr_device = 'dump_anything';
-      return;
-    } else if ( $curr_device == 'dump_anything' && $name != 'device' ) {
-      // this capability is referred to a device that was erroneously defined for some reason, skip it
-      pwurple_log('startElement', $name." cannot be merged, the device was skipped because of an error");
-      return;
-    }
-  }
-  
-  switch($name) {
-    case "ver":
-      case "last_updated":
-      case "official_url":
-      case "statement":
-      //cdata will take care of these, I'm just defining the array
-      $wurfl[$name]="";
-      //$curr_event=$wurfl[$name];
-    break;
-    case "maintainers":
-      case "maintainer":
-      case "authors":
-      case "author":
-      case "contributors":
-      case "contributor":
-      if ( sizeof($attr) > 0 ) {
-        // dirty trick: author is child of authors, contributor is child of contributors
-        while ($t = each($attr)) {
-          // example: $wurfl["authors"]["author"]["name"]="Andrea Trasatti";
-          $wurfl[$name."s"][$name][$attr["name"]][$t[0]]=$t[1];
-        }
-      }
-    break;
-    case "device":
-      if ( ($attr["user_agent"] == "" || ! $attr["user_agent"]) && $attr["id"]!="generic" ) {
-        die("No user agent and I am not generic!! id=".$attr["id"]." HELP");
-      }
-    if ( sizeof($attr) > 0 ) {
-      $patch_values = '';
-      if ( !isset($wurfl["devices"][$attr["id"]])  ) {
-        $new_device = true;
-      }
-      while ($t = each($attr)) {
-        if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
-          if ( !isset($wurfl["devices"][$attr["id"]][$t[0]])  ) {
-            if ( $new_device !== true ) {
-              $patch_values .= 'adding ';
-            }
-            $patch_values .= $t[0].'='.$t[1].', ';
-          } else if ( $wurfl["devices"][$attr["id"]][$t[0]] != $t[1] ) {
-            $patch_values .= $t[0].', '.$wurfl["devices"][$attr["id"]][$t[0]].'=>'.$t[1].', ';
-          }
-        }
-          // example: $wurfl["devices"]["ericsson_generic"]["fall_back"]="generic";
-        $wurfl["devices"][$attr["id"]][$t[0]]=$t[1];
-      }
-    }
-    if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
-      if ( $new_device === true ) {
-        $log_string = 'Adding device '.$attr["id"].' ';
-        $new_device = false;
-      } else {
-        $log_string = 'Updating device '.$attr["id"].' ';
-      }
-      if ( strlen($patch_values) > 0 )
-        $log_string .= ': '.$patch_values;
-      pwurple_log('parse', $log_string);
-    }
-    $curr_device=$attr["id"];
-    break;
-    case "group":
-      // this HAS NOT to be executed or we will define the id as string and then reuse it as array: ERROR
-      //$wurfl["devices"][$curr_device][$attr["id"]]=$attr["id"];
-      $curr_group=$attr["id"];
-    break;
-    case "capability":
-      if ( $attr["value"] == 'true' ) {
-        $value = true;
-      } else if ( $attr["value"] == 'false' ) {
-        $value =  false;
-      } else {
-        $value = $attr["value"];
-        $intval = intval($value);
-        if ( strcmp($value, $intval) == 0 ) {
-          $value = $intval;
-        }
-      }
-    if ( $curr_device != 'generic' && !isset($wurfl["devices"]['generic'][$curr_group][$attr["name"]]) ) {
-      pwurple_log('parse', 'Capability '.$attr["name"].' in group '.$curr_group.' is not defined in the generic device, can\'t set it for '.$curr_device.'.');
-    } else {
-      if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
-        if ( isset($wurfl["devices"][$curr_device][$curr_group][$attr["name"]]) ) {
-          pwurple_log('parse', $curr_device.': updating '.$attr["name"].', '.$wurfl["devices"][$curr_device][$curr_group][$attr["name"]].'=>'.$value);
-        } else {
-          pwurple_log('parse', $curr_device.': setting '.$attr["name"].'='.$value);
-        }
-      }
-      $wurfl["devices"][$curr_device][$curr_group][$attr["name"]]=$value;
-    }
-    break;
-    case "devices":
-      // This might look useless but it's good when you want to parse only the devices and skip the rest
-      if ( !isset($wurfl["devices"]) )
-      $wurfl["devices"]=array();
-    break;
-    case "pwurple_patch":
-      // opening tag of the patch file
-      case "wurfl":
-      // opening tag of the WURFL, nothing to do
-      break;
-    case "default":
-      // unknown events are not welcome
-      die($name." is an unknown event<br>");
-    break;
-  }
-}
+// $wurfl = array();
+// $pwurple_agents = array();
+// $patch_params = Array();
 
 
-function endElement($parser, $name) {
-  global $wurfl, $curr_event, $curr_device, $curr_group;
-  switch ($name) {
-    case "group":
-      break;
-    case "device":
-      break;
-    case "ver":
-      case "last_updated":
-      case "official_url":
-      case "statement":
-      $wurfl[$name]=$curr_event;
-      // referring to $GLOBALS to unset curr_event because unset will not destroy
-      // a global variable unless called in this way
-    unset($GLOBALS['curr_event']);
-    break;
-    default:
-      break;
-  }
-  
-}
-
-function characterData($parser, $data) {
-  global $curr_event;
-  if (trim($data) != "" ) {
-    $curr_event.=$data;
-    //echo "data=".$data."<br>\n";
-  }
-}
-
-function load_cache() {
-  // Setting default values
-  $cache_stat = 0;
-  $wurfl = $pwurple_agents = array();
-  
-  if ( WURFL_USE_CACHE && file_exists(CACHE_FILE) ) {
-    include(CACHE_FILE);
-  }
-  return Array($cache_stat, $wurfl, $pwurple_agents);
-}
-
-function stat_cache() {
-  $cache_stat = 0;
-  if ( WURFL_USE_CACHE && file_exists(CACHE_FILE) ) {
-    $cache_stat = filemtime(CACHE_FILE);
-  }
-  return $cache_stat;
-}
-
-function parse() {
+function pwurple_parse($wurfl_file, $patch_file) {
   global $wurfl, $pwurple_stat, $check_patch_params, $checkpatch_result;
   $wurfl = Array();
-  
+
   $xml_parser = xml_parser_create();
   xml_parser_set_option($xml_parser, XML_OPTION_CASE_FOLDING, false);
-  xml_set_element_handler($xml_parser, "startElement", "endElement");
+  xml_set_element_handler($xml_parser, "pwurple_start_element", "pwurple_end_element");
   xml_set_character_data_handler($xml_parser, "characterData");
+  
   if ( !file_exists(WURFL_FILE) ) {
     pwurple_log('parse', WURFL_FILE." does not exist");
     die(WURFL_FILE." does not exist");
@@ -361,7 +130,7 @@ function parse() {
     $check_patch_params = true;
     $xml_parser = xml_parser_create();
     xml_parser_set_option($xml_parser, XML_OPTION_CASE_FOLDING, false);
-    xml_set_element_handler($xml_parser, "startElement", "endElement");
+    xml_set_element_handler($xml_parser, "pwurple_start_element", "pwurple_end_element");
     xml_set_character_data_handler($xml_parser, "characterData");
     if (!($fp = fopen(WURFL_PATCH_FILE, "r"))) {
       pwurple_log('parse', "could not open XML patch file: ".WURFL_PATCH_FILE);
@@ -532,6 +301,240 @@ function parse() {
   return Array($cache_stat, $wurfl, $pwurple_agents);
   
 } // end of function parse
+
+
+// Author: Herouth Maoz
+// Check if var_export has the bug that eliminates empty string keys. Returns
+// true if the bug exists
+function var_export_bug() {
+  if ( ! function_exists( 'var_export' ) ) {
+    return false;
+  }
+  $a = array( '' => '!' );
+  $export_a = var_export( $a, true );
+  eval ( "\$b = $export_a;" );
+  
+  return count( $b ) != count( $a );
+}
+// this function check WURFL patch integrity/validity
+function checkpatch($name, $attr) {
+  global $wurfl, $patch_params, $checkpatch_result;
+  
+  if ( $name == 'pwurple_patch' ) {
+    $checkpatch_result['pwurple_patch'] = true;
+    return true;
+  } else if ( !$checkpatch_result['pwurple_patch'] ) {
+    $checkpatch_result['pwurple_patch'] = false;
+    pwurple_log('checkpatch', "no pwurple_patch tag! Patch file ignored.");
+    return false;
+  }
+  if ( $name == 'devices' ) {
+    $checkpatch_result['devices'] = true;
+    return true;
+  } else if ( !$checkpatch_result['devices'] ) {
+    $checkpatch_result['devices'] = false;
+    pwurple_log('checkpatch', "no devices tag! Patch file ignored.");
+    return false;
+  }
+  if ( $name == 'device' ) {
+    if ( isset($wurfl['devices'][$attr['id']]) ) {
+      if ( $wurfl['devices'][$attr['id']]['user_agent'] != $attr['user_agent'] ) {
+        $checkpatch_result['device']['id'][$attr["id"]]['patch'] = false;
+        $checkpatch_result['device']['id'][$attr["id"]]['reason'] = 'user agent mismatch, orig='.$wurfl['devices'][$attr['id']]['user_agent'].', new='.$attr['user_agent'].', id='.$attr['id'].', fall_back='.$attr['fall_back'];
+      }
+    }
+    /*
+     * checking of the fall_back is disabled. I might define a device's fall_back which will be defined later in the patch file.
+     * fall_backs checking could be done after merging.
+    if ( $attr['id'] == 'generic' && $attr['user_agent'] == '' && $attr['fall_back'] == 'root' ) {
+      // generic device, everything's ok.
+    } else if ( !isset($wurfl['devices'][$attr['fall_back']]) ) {
+      $checkpatch_result['device']['id'][$attr["id"]]['patch'] = false;
+      $checkpatch_result['device']['id'][$attr["id"]]['reason'] .= 'wrong fall_back, id='.$attr['id'].', fall_back='.$attr['fall_back'];
+    }
+     */
+    if ( isset($checkpatch_result['device']['id'][$attr["id"]]['patch'])
+         && !$checkpatch_result['device']['id'][$attr["id"]]['patch'] ) {
+           pwurple_log('checkpatch', "ERROR:".$checkpatch_result['device']['id'][$attr["id"]]['reason']);
+           return false;
+         }
+  }
+  return true;
+}
+
+function pwurple_start_element($parser, $name, $attr) {
+  global $wurfl, $curr_event, $curr_device, $curr_group, $fp_cache, $check_patch_params, $checkpatch_result;
+  
+  if ( $check_patch_params ) {
+    // if the patch file checks fail I don't merge info retrived
+    if ( !checkpatch($name, $attr) ) {
+      pwurple_log('pwurple_start_element', "error on $name, ".$attr['id']);
+      $curr_device = 'dump_anything';
+      return;
+    } else if ( $curr_device == 'dump_anything' && $name != 'device' ) {
+      // this capability is referred to a device that was erroneously defined for some reason, skip it
+      pwurple_log('pwurple_start_element', $name." cannot be merged, the device was skipped because of an error");
+      return;
+    }
+  }
+  
+  switch($name) {
+    case "ver":
+      case "last_updated":
+      case "official_url":
+      case "statement":
+      //cdata will take care of these, I'm just defining the array
+      $wurfl[$name]="";
+      //$curr_event=$wurfl[$name];
+    break;
+    case "maintainers":
+      case "maintainer":
+      case "authors":
+      case "author":
+      case "contributors":
+      case "contributor":
+      if ( sizeof($attr) > 0 ) {
+        // dirty trick: author is child of authors, contributor is child of contributors
+        while ($t = each($attr)) {
+          // example: $wurfl["authors"]["author"]["name"]="Andrea Trasatti";
+          $wurfl[$name."s"][$name][$attr["name"]][$t[0]]=$t[1];
+        }
+      }
+    break;
+    case "device":
+      if ( ($attr["user_agent"] == "" || ! $attr["user_agent"]) && $attr["id"]!="generic" ) {
+        die("No user agent and I am not generic!! id=".$attr["id"]." HELP");
+      }
+    if ( sizeof($attr) > 0 ) {
+      $patch_values = '';
+      if ( !isset($wurfl["devices"][$attr["id"]])  ) {
+        $new_device = true;
+      }
+      while ($t = each($attr)) {
+        if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
+          if ( !isset($wurfl["devices"][$attr["id"]][$t[0]])  ) {
+            if ( $new_device !== true ) {
+              $patch_values .= 'adding ';
+            }
+            $patch_values .= $t[0].'='.$t[1].', ';
+          } else if ( $wurfl["devices"][$attr["id"]][$t[0]] != $t[1] ) {
+            $patch_values .= $t[0].', '.$wurfl["devices"][$attr["id"]][$t[0]].'=>'.$t[1].', ';
+          }
+        }
+          // example: $wurfl["devices"]["ericsson_generic"]["fall_back"]="generic";
+        $wurfl["devices"][$attr["id"]][$t[0]]=$t[1];
+      }
+    }
+    if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
+      if ( $new_device === true ) {
+        $log_string = 'Adding device '.$attr["id"].' ';
+        $new_device = false;
+      } else {
+        $log_string = 'Updating device '.$attr["id"].' ';
+      }
+      if ( strlen($patch_values) > 0 )
+        $log_string .= ': '.$patch_values;
+      pwurple_log('parse', $log_string);
+    }
+    $curr_device=$attr["id"];
+    break;
+    case "group":
+      // this HAS NOT to be executed or we will define the id as string and then reuse it as array: ERROR
+      //$wurfl["devices"][$curr_device][$attr["id"]]=$attr["id"];
+      $curr_group=$attr["id"];
+    break;
+    case "capability":
+      if ( $attr["value"] == 'true' ) {
+        $value = true;
+      } else if ( $attr["value"] == 'false' ) {
+        $value =  false;
+      } else {
+        $value = $attr["value"];
+        $intval = intval($value);
+        if ( strcmp($value, $intval) == 0 ) {
+          $value = $intval;
+        }
+      }
+    if ( $curr_device != 'generic' && !isset($wurfl["devices"]['generic'][$curr_group][$attr["name"]]) ) {
+      pwurple_log('parse', 'Capability '.$attr["name"].' in group '.$curr_group.' is not defined in the generic device, can\'t set it for '.$curr_device.'.');
+    } else {
+      if ( $check_patch_params && defined('WURFL_PATCH_DEBUG') && WURFL_PATCH_DEBUG === true ) {
+        if ( isset($wurfl["devices"][$curr_device][$curr_group][$attr["name"]]) ) {
+          pwurple_log('parse', $curr_device.': updating '.$attr["name"].', '.$wurfl["devices"][$curr_device][$curr_group][$attr["name"]].'=>'.$value);
+        } else {
+          pwurple_log('parse', $curr_device.': setting '.$attr["name"].'='.$value);
+        }
+      }
+      $wurfl["devices"][$curr_device][$curr_group][$attr["name"]]=$value;
+    }
+    break;
+    case "devices":
+      // This might look useless but it's good when you want to parse only the devices and skip the rest
+      if ( !isset($wurfl["devices"]) )
+      $wurfl["devices"]=array();
+    break;
+    case "pwurple_patch":
+      // opening tag of the patch file
+      case "wurfl":
+      // opening tag of the WURFL, nothing to do
+      break;
+    case "default":
+      // unknown events are not welcome
+      die($name." is an unknown event<br>");
+    break;
+  }
+}
+
+
+function pwurple_end_element($parser, $name) {
+  global $wurfl, $curr_event, $curr_device, $curr_group;
+  switch ($name) {
+    case "group":
+      break;
+    case "device":
+      break;
+    case "ver":
+      case "last_updated":
+      case "official_url":
+      case "statement":
+      $wurfl[$name]=$curr_event;
+      // referring to $GLOBALS to unset curr_event because unset will not destroy
+      // a global variable unless called in this way
+    unset($GLOBALS['curr_event']);
+    break;
+    default:
+      break;
+  }
+  
+}
+
+function characterData($parser, $data) {
+  global $curr_event;
+  if (trim($data) != "" ) {
+    $curr_event.=$data;
+    //echo "data=".$data."<br>\n";
+  }
+}
+
+function load_cache() {
+  // Setting default values
+  $cache_stat = 0;
+  $wurfl = $pwurple_agents = array();
+  
+  if ( WURFL_USE_CACHE && file_exists(CACHE_FILE) ) {
+    include(CACHE_FILE);
+  }
+  return Array($cache_stat, $wurfl, $pwurple_agents);
+}
+
+function stat_cache() {
+  $cache_stat = 0;
+  if ( WURFL_USE_CACHE && file_exists(CACHE_FILE) ) {
+    $cache_stat = filemtime(CACHE_FILE);
+  }
+  return $cache_stat;
+}
+
 
 function pwurple_log($func, $msg, $logtype=3) {
   error_log("PWURPLE: [$func] $msg");
