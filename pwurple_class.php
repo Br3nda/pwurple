@@ -159,7 +159,8 @@ class pwurple_class {
 	 * @access public
 	 *
 	 */
-    function pwurple_class() {
+    function pwurple_class($wurfl_file, $patch_file='') {
+      pwurple_parse($wurfl_file, $patch_file);
 //       $wurfl=Array(), $pwurple_agents=Array()) {
 
 /*		$this->_wurfl = $wurfl;
@@ -577,7 +578,7 @@ class pwurple_class {
 			return;
 		}
 		*/
-		if( !$rv ){
+		if (!$rv) {
 			$this->_toLog('_WriteFastAgentToId', 'Unable to rename '.$filename.' to '. WURFL_AGENT2ID_FILE, LOG_WARNING);
 			$unl = @unlink(WURFL_AGENT2ID_FILE);
 
@@ -612,7 +613,8 @@ class pwurple_class {
 			include(WURFL_AGENT2ID_FILE);
 			// unserialization
 			//$a = unserialize(rawurldecode($cache_agents));
-		} else {
+		}
+    else {
 			return false;
 		}
 		foreach ( $cached_agents as $device ) {
@@ -641,8 +643,9 @@ class pwurple_class {
 
 		// First of all check configuration. If autoupdate is set to false always
 		// return true, otherwise check
-		if ( WURFL_CACHE_AUTOUPDATE === false )
+    if (WURFL_CACHE_AUTOUPDATE === false) {
 			return true;
+    }
 
 		// WURFL hasn't been loaded into memory, I'll do it now
 		$pwurple_stat = filemtime(WURFL_FILE);
@@ -656,7 +659,8 @@ class pwurple_class {
 		$cache_stat = stat_cache();
 		if ( $pwurple_stat <= $cache_stat ) {
 			return true;
-		} else {
+		}
+    else {
 			$this->_toLog('_cacheIsValid', 'cache file is outdated', LOG_INFO);
 			return false;
 		}
