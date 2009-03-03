@@ -1,0 +1,3604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wurfl>
+  <version>
+    <ver>www.wurflpro.com - 2009-01-08 07:36:49</ver>
+    <last_updated>Thu Jan 08 07:38:46 -0600 2009</last_updated>
+    <official_url>http://wurfl.sourceforge.net/</official_url>
+	 <maintainers>
+	     <maintainer name="Luca Passani" email="passani@eunet.no" home_page="http://www.wurfl.com"/>
+	 </maintainers>
+	 <authors>
+	   <author name="Luca Passani" email="passani@eunet.no" home_page="http://www.wurfl.com"/>
+	 </authors>    
+    <statement>
+     <![CDATA[ 
+
+      Dear Developer, the WURFL file contains information about the
+      capabilities of mobile devices, capabilities and features.
+      The main scope of this file is to collect as
+      many information as we can about all the existing wireless devices
+      that access mobile pages so that developers will be able to build better
+      applications and better services for the users.
+      This project is open-source and is intended for developers working
+      with the WAP environment. All the information listed here has been
+      collected by many different people from many different
+      countries. You are allowed to use WURFL in any of your applications,
+      free or commercial. The only thing required is to make public any
+      modification to this file, following the original
+      spirit and idea of the creators of this project. This will help WURFL 
+      to grow better and better every day. The use of WURFL is at your own risk, 
+      there is no warranty that all agents and
+      capabilities are correct. All the information, as stated, has been gathered
+      by many users from many places around the world and as such there is
+      no guarantee about the reliability of this
+      information. Post any noteworthy modification and comment 
+      to the file on the WMLProgramming mailing list on Yahoo Groups:
+      http://tech.groups.yahoo.com/group/wmlprogramming/ Alternatively,
+      you can mail your modification to Luca Passani, 
+      the WURFL maintainer, at passani at eunet dot no
+
+Thank you 
+
+WMLProgramming mailing list 
+]]></statement>
+  </version>
+  <devices>
+  <device id="generic" user_agent="" fall_back="root">
+    <group id="product_info">
+      <capability name="mobile_browser" value=""/>
+      <capability name="has_pointing_device" value="false"/>
+      <capability name="device_os" value=""/>
+      <capability name="nokia_series" value="0"/>
+      <capability name="has_qwerty_keyboard" value="false"/>
+      <capability name="pointing_method" value=""/>
+      <capability name="mobile_browser_version" value=""/>
+      <capability name="nokia_edition" value="0"/>
+      <capability name="uaprof" value=""/>
+      <capability name="can_skip_aligned_link_row" value="false"/>
+      <capability name="device_claims_web_support" value="false"/>
+      <capability name="ununiqueness_handler" value=""/>
+      <capability name="model_name" value=""/>
+      <capability name="device_os_version" value=""/>
+      <capability name="uaprof2" value=""/>
+      <capability name="is_wireless_device" value="true"/>
+      <capability name="uaprof3" value=""/>
+      <capability name="brand_name" value=""/>
+      <capability name="model_extra_info" value=""/>
+      <capability name="marketing_name" value=""/>
+      <capability name="release_date" value="2002_january"/>
+      <capability name="unique" value="true"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="icons_on_menu_items_support" value="false"/>
+      <capability name="opwv_wml_extensions_support" value="false"/>
+      <capability name="built_in_back_button_support" value="false"/>
+      <capability name="proportional_font" value="false"/>
+      <capability name="insert_br_element_after_widget_recommended" value="false"/>
+      <capability name="wizards_recommended" value="false"/>
+      <capability name="wml_can_display_images_and_text_on_same_line" value="false"/>
+      <capability name="softkey_support" value="false"/>
+      <capability name="wml_make_phone_call_string" value="wtai://wp/mc;"/>
+      <capability name="deck_prefetch_support" value="false"/>
+      <capability name="menu_with_select_element_recommended" value="false"/>
+      <capability name="numbered_menus" value="false"/>
+      <capability name="card_title_support" value="true"/>
+      <capability name="image_as_link_support" value="false"/>
+      <capability name="wrap_mode_support" value="false"/>
+      <capability name="table_support" value="true"/>
+      <capability name="access_key_support" value="false"/>
+      <capability name="wml_displays_image_in_center" value="false"/>
+      <capability name="elective_forms_recommended" value="true"/>
+      <capability name="times_square_mode_support" value="false"/>
+      <capability name="break_list_of_links_with_br_element_recommended" value="true"/>
+      <capability name="menu_with_list_of_links_recommended" value="true"/>
+    </group>
+    <group id="chtml_ui">
+      <capability name="imode_region" value="none"/>
+      <capability name="chtml_can_display_images_and_text_on_same_line" value="false"/>
+      <capability name="chtml_displays_image_in_center" value="false"/>
+      <capability name="chtml_make_phone_call_string" value="tel:"/>
+      <capability name="chtml_table_support" value="false"/>
+      <capability name="chtml_display_accesskey" value="false"/>
+      <capability name="emoji" value="false"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_preferred_charset" value="utf8"/>
+      <capability name="xhtml_supports_css_cell_table_coloring" value="false"/>
+      <capability name="xhtml_select_as_radiobutton" value="false"/>
+      <capability name="xhtml_autoexpand_select" value="false"/>
+      <capability name="accept_third_party_cookie" value="true"/>
+      <capability name="xhtml_make_phone_call_string" value="tel:"/>
+      <capability name="xhtml_allows_disabled_form_elements" value="false"/>
+      <capability name="xhtml_supports_invisible_text" value="false"/>
+      <capability name="xhtml_select_as_dropdown" value="false"/>
+      <capability name="cookie_support" value="false"/>
+      <capability name="xhtml_send_mms_string" value="none"/>
+      <capability name="xhtml_table_support" value="false"/>
+      <capability name="xhtml_display_accesskey" value="false"/>
+      <capability name="xhtmlmp_preferred_mime_type" value="application/vnd.wap.xhtml+xml"/>
+      <capability name="xhtml_supports_monospace_font" value="false"/>
+      <capability name="xhtml_supports_inline_input" value="false"/>
+      <capability name="xhtml_supports_forms_in_table" value="false"/>
+      <capability name="xhtml_document_title_support" value="true"/>
+      <capability name="xhtml_support_wml2_namespace" value="false"/>
+      <capability name="xhtml_supports_file_upload" value="false"/>
+      <capability name="xhtml_readable_background_color1" value="#FFFFFF"/>
+      <capability name="xhtml_format_as_attribute" value="false"/>
+      <capability name="xhtml_supports_table_for_layout" value="false"/>
+      <capability name="xhtml_readable_background_color2" value="#FFFFFF"/>
+      <capability name="xhtml_select_as_popup" value="false"/>
+      <capability name="xhtml_send_sms_string" value="none"/>
+      <capability name="xhtml_format_as_css_property" value="false"/>
+      <capability name="xhtml_file_upload" value="not_supported"/>
+      <capability name="xhtml_honors_bgcolor" value="false"/>
+      <capability name="xhtml_support_iframe" value="false"/>
+      <capability name="opwv_xhtml_extensions_support" value="false"/>
+      <capability name="xhtml_marquee_as_css_property" value="false"/>
+      <capability name="xhtml_nowrap_mode" value="false"/>
+    </group>
+    <group id="ajax">
+      <capability name="ajax_xhr_type" value="none"/>
+      <capability name="ajax_support_getelementbyid" value="false"/>
+      <capability name="ajax_support_event_listener" value="false"/>
+      <capability name="ajax_manipulate_dom" value="false"/>
+      <capability name="ajax_support_javascript" value="false"/>
+      <capability name="ajax_support_inner_html" value="false"/>
+      <capability name="ajax_manipulate_css" value="false"/>
+      <capability name="ajax_support_events" value="false"/>
+    </group>
+    <group id="markup">
+      <capability name="html_web_3_2" value="false"/>
+      <capability name="html_wi_imode_htmlx_1" value="false"/>
+      <capability name="html_wi_imode_html_1" value="false"/>
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="false"/>
+      <capability name="html_wi_imode_html_2" value="false"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="false"/>
+      <capability name="html_wi_imode_compact_generic" value="false"/>
+      <capability name="html_wi_imode_html_3" value="false"/>
+      <capability name="wml_1_1" value="true"/>
+      <capability name="html_wi_imode_html_4" value="false"/>
+      <capability name="wml_1_2" value="false"/>
+      <capability name="html_wi_imode_html_5" value="false"/>
+      <capability name="wml_1_3" value="false"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="1"/>
+      <capability name="voicexml" value="false"/>
+      <capability name="html_wi_imode_htmlx_1_1" value="false"/>
+      <capability name="multipart_support" value="false"/>
+      <capability name="html_web_4_0" value="false"/>
+    </group>
+    <group id="cache">
+      <capability name="time_to_live_support" value="false"/>
+      <capability name="total_cache_disable_support" value="false"/>
+    </group>
+    <group id="display">
+      <capability name="physical_screen_height" value="27"/>
+      <capability name="columns" value="11"/>
+      <capability name="physical_screen_width" value="27"/>
+      <capability name="rows" value="6"/>
+      <capability name="max_image_width" value="90"/>
+      <capability name="resolution_height" value="40"/>
+      <capability name="resolution_width" value="90"/>
+      <capability name="max_image_height" value="35"/>
+    </group>
+    <group id="image_format">
+      <capability name="greyscale" value="false"/>
+      <capability name="jpg" value="false"/>
+      <capability name="gif" value="true"/>
+      <capability name="transparent_png_index" value="false"/>
+      <capability name="epoc_bmp" value="false"/>
+      <capability name="bmp" value="false"/>
+      <capability name="wbmp" value="true"/>
+      <capability name="gif_animated" value="false"/>
+      <capability name="colors" value="256"/>
+      <capability name="svgt_1_1_plus" value="false"/>
+      <capability name="svgt_1_1" value="false"/>
+      <capability name="transparent_png_alpha" value="false"/>
+      <capability name="png" value="false"/>
+      <capability name="tiff" value="false"/>
+    </group>
+    <group id="bugs">
+      <capability name="emptyok" value="false"/>
+      <capability name="empty_option_value_support" value="true"/>
+      <capability name="basic_authentication_support" value="true"/>
+      <capability name="post_method_support" value="true"/>
+    </group>
+    <group id="wta">
+      <capability name="nokia_voice_call" value="false"/>
+      <capability name="wta_pdc" value="false"/>
+      <capability name="wta_voice_call" value="false"/>
+      <capability name="wta_misc" value="false"/>
+      <capability name="wta_phonebook" value="false"/>
+    </group>
+    <group id="security">
+      <capability name="phone_id_provided" value="false"/>
+      <capability name="https_support" value="true"/>
+      <capability name="https_detectable" value="false"/>
+    </group>
+    <group id="bearer">
+      <capability name="sdio" value="false"/>
+      <capability name="wifi" value="false"/>
+      <capability name="max_data_rate" value="9"/>
+      <capability name="vpn" value="false"/>
+    </group>
+    <group id="storage">
+      <capability name="max_length_of_username" value="0"/>
+      <capability name="max_url_length_bookmark" value="0"/>
+      <capability name="max_no_of_bookmarks" value="0"/>
+      <capability name="max_deck_size" value="4000"/>
+      <capability name="max_url_length_cached_page" value="0"/>
+      <capability name="max_length_of_password" value="0"/>
+      <capability name="max_no_of_connection_settings" value="0"/>
+      <capability name="max_url_length_in_requests" value="128"/>
+      <capability name="max_object_size" value="0"/>
+      <capability name="max_url_length_homepage" value="0"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_directdownload_size_limit" value="0"/>
+      <capability name="video_wmv" value="false"/>
+      <capability name="video" value="false"/>
+      <capability name="picture_bmp" value="false"/>
+      <capability name="picture" value="false"/>
+      <capability name="wallpaper_df_size_limit" value="0"/>
+      <capability name="picture_preferred_width" value="0"/>
+      <capability name="wallpaper_oma_size_limit" value="0"/>
+      <capability name="video_real_media_8" value="false"/>
+      <capability name="picture_greyscale" value="false"/>
+      <capability name="inline_support" value="false"/>
+      <capability name="ringtone_qcelp" value="false"/>
+      <capability name="screensaver_oma_size_limit" value="0"/>
+      <capability name="screensaver_wbmp" value="false"/>
+      <capability name="video_acodec_amr" value="false"/>
+      <capability name="video_real_media_9" value="false"/>
+      <capability name="picture_resize" value="none"/>
+      <capability name="picture_preferred_height" value="0"/>
+      <capability name="ringtone_rmf" value="false"/>
+      <capability name="wallpaper_wbmp" value="false"/>
+      <capability name="wallpaper_jpg" value="false"/>
+      <capability name="screensaver_bmp" value="false"/>
+      <capability name="screensaver_max_width" value="0"/>
+      <capability name="video_acodec_aac_ltp" value="false"/>
+      <capability name="video_vcodec_mpeg4" value="false"/>
+      <capability name="video_qcif" value="false"/>
+      <capability name="picture_inline_size_limit" value="0"/>
+      <capability name="picture_colors" value="2"/>
+      <capability name="ringtone_midi_polyphonic" value="false"/>
+      <capability name="ringtone_midi_monophonic" value="false"/>
+      <capability name="video_max_width" value="0"/>
+      <capability name="screensaver_preferred_height" value="0"/>
+      <capability name="ringtone_voices" value="1"/>
+      <capability name="video_3gpp2" value="false"/>
+      <capability name="ringtone_3gpp" value="false"/>
+      <capability name="oma_support" value="false"/>
+      <capability name="ringtone_inline_size_limit" value="0"/>
+      <capability name="wallpaper_preferred_width" value="0"/>
+      <capability name="wallpaper_greyscale" value="false"/>
+      <capability name="screensaver_preferred_width" value="0"/>
+      <capability name="video_mp4" value="false"/>
+      <capability name="wallpaper_preferred_height" value="0"/>
+      <capability name="picture_max_width" value="0"/>
+      <capability name="video_vcodec_h264" value="none"/>
+      <capability name="video_max_height" value="0"/>
+      <capability name="picture_jpg" value="false"/>
+      <capability name="ringtone_aac" value="false"/>
+      <capability name="ringtone_oma_size_limit" value="0"/>
+      <capability name="wallpaper_directdownload_size_limit" value="0"/>
+      <capability name="screensaver_inline_size_limit" value="0"/>
+      <capability name="video_mov" value="false"/>
+      <capability name="video_real_media_10" value="false"/>
+      <capability name="ringtone_xmf" value="false"/>
+      <capability name="video_oma_size_limit" value="0"/>
+      <capability name="picture_max_height" value="0"/>
+      <capability name="screensaver_max_height" value="0"/>
+      <capability name="ringtone_mp3" value="false"/>
+      <capability name="wallpaper_png" value="false"/>
+      <capability name="screensaver_jpg" value="false"/>
+      <capability name="video_df_size_limit" value="0"/>
+      <capability name="ringtone_directdownload_size_limit" value="0"/>
+      <capability name="wallpaper_max_width" value="0"/>
+      <capability name="wallpaper_max_height" value="0"/>
+      <capability name="video_acodec_aac" value="false"/>
+      <capability name="screensaver" value="false"/>
+      <capability name="ringtone_wav" value="false"/>
+      <capability name="wallpaper_gif" value="false"/>
+      <capability name="screensaver_directdownload_size_limit" value="0"/>
+      <capability name="video_vcodec_h263_0" value="false"/>
+      <capability name="video_inline_size_limit" value="0"/>
+      <capability name="picture_df_size_limit" value="0"/>
+      <capability name="wallpaper_tiff" value="false"/>
+      <capability name="screensaver_df_size_limit" value="0"/>
+      <capability name="ringtone_awb" value="false"/>
+      <capability name="ringtone" value="false"/>
+      <capability name="wallpaper_inline_size_limit" value="0"/>
+      <capability name="video_preferred_width" value="0"/>
+      <capability name="picture_directdownload_size_limit" value="0"/>
+      <capability name="picture_png" value="false"/>
+      <capability name="wallpaper_bmp" value="false"/>
+      <capability name="video_vcodec_h263_3" value="false"/>
+      <capability name="video_sqcif" value="false"/>
+      <capability name="picture_wbmp" value="false"/>
+      <capability name="ringtone_df_size_limit" value="0"/>
+      <capability name="picture_oma_size_limit" value="0"/>
+      <capability name="picture_gif" value="false"/>
+      <capability name="screensaver_png" value="false"/>
+      <capability name="wallpaper_resize" value="none"/>
+      <capability name="screensaver_greyscale" value="false"/>
+      <capability name="ringtone_mmf" value="false"/>
+      <capability name="ringtone_amr" value="false"/>
+      <capability name="wallpaper" value="false"/>
+      <capability name="ringtone_digiplug" value="false"/>
+      <capability name="video_acodec_qcelp" value="false"/>
+      <capability name="video_preferred_height" value="0"/>
+      <capability name="ringtone_spmidi" value="false"/>
+      <capability name="ringtone_compactmidi" value="false"/>
+      <capability name="ringtone_imelody" value="false"/>
+      <capability name="screensaver_resize" value="none"/>
+      <capability name="wallpaper_colors" value="2"/>
+      <capability name="directdownload_support" value="false"/>
+      <capability name="downloadfun_support" value="false"/>
+      <capability name="video_acodec_awb" value="false"/>
+      <capability name="video_max_frame_rate" value="0"/>
+      <capability name="video_3gpp" value="false"/>
+      <capability name="screensaver_colors" value="2"/>
+      <capability name="screensaver_gif" value="false"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_combined_delivery" value="false"/>
+      <capability name="oma_v_1_0_separate_delivery" value="false"/>
+      <capability name="oma_v_1_0_forwardlock" value="false"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_video_acodec_amr" value="false"/>
+      <capability name="streaming_video_vcodec_h263_0" value="false"/>
+      <capability name="streaming_video_max_video_bit_rate" value="0"/>
+      <capability name="streaming_video_size_limit" value="0"/>
+      <capability name="streaming_video_sqcif" value="false"/>
+      <capability name="streaming_mov" value="false"/>
+      <capability name="streaming_real_media_10" value="false"/>
+      <capability name="streaming_video_sqcif_max_width" value="0"/>
+      <capability name="streaming_video_vcodec_h263_3" value="false"/>
+      <capability name="streaming_video_max_bit_rate" value="0"/>
+      <capability name="streaming_wmv" value="false"/>
+      <capability name="streaming_video_sqcif_max_height" value="0"/>
+      <capability name="streaming_video_max_audio_bit_rate" value="0"/>
+      <capability name="streaming_video_vcodec_mpeg4" value="false"/>
+      <capability name="streaming_3gpp" value="false"/>
+      <capability name="streaming_video_acodec_aac_ltp" value="false"/>
+      <capability name="streaming_video_acodec_awb" value="false"/>
+      <capability name="streaming_video_max_frame_rate" value="0"/>
+      <capability name="streaming_real_media_8" value="false"/>
+      <capability name="streaming_video_acodec_aac" value="false"/>
+      <capability name="streaming_video_min_video_bit_rate" value="0"/>
+      <capability name="streaming_real_media_9" value="false"/>
+      <capability name="streaming_video" value="false"/>
+      <capability name="streaming_video_qcif" value="false"/>
+      <capability name="streaming_mp4" value="false"/>
+      <capability name="streaming_video_vcodec_h264" value="none"/>
+      <capability name="streaming_video_qcif_max_height" value="0"/>
+      <capability name="streaming_video_qcif_max_width" value="0"/>
+    </group>
+    <group id="wap_push">
+      <capability name="expiration_date" value="false"/>
+      <capability name="utf8_support" value="false"/>
+      <capability name="connectionless_cache_operation" value="false"/>
+      <capability name="connectionless_service_load" value="false"/>
+      <capability name="iso8859_support" value="false"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="false"/>
+      <capability name="connectionless_service_indication" value="false"/>
+      <capability name="ascii_support" value="false"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="false"/>
+      <capability name="connectionoriented_confirmed_service_load" value="false"/>
+      <capability name="wap_push_support" value="false"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="false"/>
+      <capability name="connectionoriented_unconfirmed_service_load" value="false"/>
+      <capability name="connectionoriented_unconfirmed_service_indication" value="false"/>
+    </group>
+    <group id="j2me">
+      <capability name="doja_1_5" value="false"/>
+      <capability name="j2me_datefield_broken" value="false"/>
+      <capability name="j2me_clear_key_code" value="0"/>
+      <capability name="j2me_right_softkey_code" value="0"/>
+      <capability name="j2me_heap_size" value="0"/>
+      <capability name="j2me_canvas_width" value="0"/>
+      <capability name="j2me_loctapi" value="false"/>
+      <capability name="j2me_motorola_lwt" value="false"/>
+      <capability name="doja_3_5" value="false"/>
+      <capability name="j2me_wbmp" value="false"/>
+      <capability name="j2me_rmf" value="false"/>
+      <capability name="j2me_wma" value="false"/>
+      <capability name="j2me_left_softkey_code" value="0"/>
+      <capability name="j2me_jtwi" value="false"/>
+      <capability name="j2me_jpg" value="false"/>
+      <capability name="j2me_return_key_code" value="0"/>
+      <capability name="j2me_real8" value="false"/>
+      <capability name="j2me_max_record_store_size" value="0"/>
+      <capability name="j2me_realmedia" value="false"/>
+      <capability name="j2me_midp_1_0" value="false"/>
+      <capability name="j2me_bmp3" value="false"/>
+      <capability name="j2me_midi" value="false"/>
+      <capability name="j2me_btapi" value="false"/>
+      <capability name="j2me_siemens_extension" value="false"/>
+      <capability name="j2me_h263" value="false"/>
+      <capability name="j2me_audio_capture_enabled" value="false"/>
+      <capability name="j2me_midp_2_0" value="false"/>
+      <capability name="j2me_datefield_no_accepts_null_date" value="false"/>
+      <capability name="j2me_aac" value="false"/>
+      <capability name="j2me_capture_image_formats" value="none"/>
+      <capability name="j2me_select_key_code" value="0"/>
+      <capability name="j2me_xmf" value="false"/>
+      <capability name="j2me_photo_capture_enabled" value="false"/>
+      <capability name="j2me_realaudio" value="false"/>
+      <capability name="j2me_realvideo" value="false"/>
+      <capability name="j2me_mp3" value="false"/>
+      <capability name="j2me_png" value="false"/>
+      <capability name="j2me_au" value="false"/>
+      <capability name="j2me_screen_width" value="0"/>
+      <capability name="j2me_mp4" value="false"/>
+      <capability name="j2me_mmapi_1_0" value="false"/>
+      <capability name="j2me_http" value="false"/>
+      <capability name="j2me_imelody" value="false"/>
+      <capability name="j2me_socket" value="false"/>
+      <capability name="j2me_3dapi" value="false"/>
+      <capability name="j2me_bits_per_pixel" value="0"/>
+      <capability name="j2me_mmapi_1_1" value="false"/>
+      <capability name="j2me_udp" value="false"/>
+      <capability name="j2me_wav" value="false"/>
+      <capability name="j2me_middle_softkey_code" value="0"/>
+      <capability name="j2me_svgt" value="false"/>
+      <capability name="j2me_gif" value="false"/>
+      <capability name="j2me_siemens_color_game" value="false"/>
+      <capability name="j2me_max_jar_size" value="0"/>
+      <capability name="j2me_wmapi_1_0" value="false"/>
+      <capability name="j2me_nokia_ui" value="false"/>
+      <capability name="j2me_screen_height" value="0"/>
+      <capability name="j2me_wmapi_1_1" value="false"/>
+      <capability name="j2me_wmapi_2_0" value="false"/>
+      <capability name="doja_1_0" value="false"/>
+      <capability name="j2me_serial" value="false"/>
+      <capability name="doja_2_0" value="false"/>
+      <capability name="j2me_bmp" value="false"/>
+      <capability name="j2me_amr" value="false"/>
+      <capability name="j2me_gif89a" value="false"/>
+      <capability name="j2me_cldc_1_0" value="false"/>
+      <capability name="doja_2_1" value="false"/>
+      <capability name="doja_3_0" value="false"/>
+      <capability name="j2me_cldc_1_1" value="false"/>
+      <capability name="doja_2_2" value="false"/>
+      <capability name="doja_4_0" value="false"/>
+      <capability name="j2me_3gpp" value="false"/>
+      <capability name="j2me_video_capture_enabled" value="false"/>
+      <capability name="j2me_canvas_height" value="0"/>
+      <capability name="j2me_https" value="false"/>
+      <capability name="j2me_mpeg4" value="false"/>
+      <capability name="j2me_storage_size" value="0"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_3gpp" value="false"/>
+      <capability name="mms_wbxml" value="false"/>
+      <capability name="mms_symbian_install" value="false"/>
+      <capability name="mms_png" value="false"/>
+      <capability name="mms_max_size" value="0"/>
+      <capability name="mms_rmf" value="false"/>
+      <capability name="mms_nokia_operatorlogo" value="false"/>
+      <capability name="mms_max_width" value="0"/>
+      <capability name="mms_max_frame_rate" value="0"/>
+      <capability name="mms_wml" value="false"/>
+      <capability name="mms_evrc" value="false"/>
+      <capability name="mms_spmidi" value="false"/>
+      <capability name="mms_gif_static" value="false"/>
+      <capability name="mms_max_height" value="0"/>
+      <capability name="sender" value="false"/>
+      <capability name="mms_video" value="false"/>
+      <capability name="mms_vcard" value="false"/>
+      <capability name="mms_nokia_3dscreensaver" value="false"/>
+      <capability name="mms_qcelp" value="false"/>
+      <capability name="mms_midi_polyphonic" value="false"/>
+      <capability name="mms_wav" value="false"/>
+      <capability name="mms_jpeg_progressive" value="false"/>
+      <capability name="mms_jad" value="false"/>
+      <capability name="mms_nokia_ringingtone" value="false"/>
+      <capability name="built_in_recorder" value="false"/>
+      <capability name="mms_midi_monophonic" value="false"/>
+      <capability name="mms_3gpp2" value="false"/>
+      <capability name="mms_wmlc" value="false"/>
+      <capability name="mms_nokia_wallpaper" value="false"/>
+      <capability name="mms_bmp" value="false"/>
+      <capability name="mms_vcalendar" value="false"/>
+      <capability name="mms_jar" value="false"/>
+      <capability name="mms_ota_bitmap" value="false"/>
+      <capability name="mms_mp3" value="false"/>
+      <capability name="mms_mmf" value="false"/>
+      <capability name="mms_amr" value="false"/>
+      <capability name="mms_wbmp" value="false"/>
+      <capability name="built_in_camera" value="false"/>
+      <capability name="receiver" value="false"/>
+      <capability name="mms_mp4" value="false"/>
+      <capability name="mms_xmf" value="false"/>
+      <capability name="mms_jpeg_baseline" value="false"/>
+      <capability name="mms_midi_polyphonic_voices" value="0"/>
+      <capability name="mms_gif_animated" value="false"/>
+    </group>
+    <group id="sms">
+      <capability name="ems" value="false"/>
+      <capability name="text_imelody" value="false"/>
+      <capability name="nokiaring" value="false"/>
+      <capability name="siemens_logo_height" value="29"/>
+      <capability name="ems_variablesizedpictures" value="false"/>
+      <capability name="sckl_groupgraphic" value="false"/>
+      <capability name="siemens_ota" value="false"/>
+      <capability name="sagem_v1" value="false"/>
+      <capability name="largeoperatorlogo" value="false"/>
+      <capability name="sagem_v2" value="false"/>
+      <capability name="ems_version" value="0"/>
+      <capability name="ems_odi" value="false"/>
+      <capability name="nokiavcal" value="false"/>
+      <capability name="operatorlogo" value="false"/>
+      <capability name="siemens_logo_width" value="101"/>
+      <capability name="ems_imelody" value="false"/>
+      <capability name="sckl_vcard" value="false"/>
+      <capability name="siemens_screensaver_width" value="101"/>
+      <capability name="sckl_operatorlogo" value="false"/>
+      <capability name="panasonic" value="false"/>
+      <capability name="ems_upi" value="false"/>
+      <capability name="nokiavcard" value="false"/>
+      <capability name="callericon" value="false"/>
+      <capability name="gprtf" value="false"/>
+      <capability name="siemens_screensaver_height" value="50"/>
+      <capability name="sckl_ringtone" value="false"/>
+      <capability name="picturemessage" value="false"/>
+      <capability name="sckl_vcalendar" value="false"/>
+    </group>
+    <group id="sound_format">
+      <capability name="rmf" value="false"/>
+      <capability name="qcelp" value="false"/>
+      <capability name="awb" value="false"/>
+      <capability name="smf" value="false"/>
+      <capability name="wav" value="false"/>
+      <capability name="nokia_ringtone" value="false"/>
+      <capability name="aac" value="false"/>
+      <capability name="digiplug" value="false"/>
+      <capability name="sp_midi" value="false"/>
+      <capability name="compactmidi" value="false"/>
+      <capability name="voices" value="1"/>
+      <capability name="mp3" value="false"/>
+      <capability name="mld" value="false"/>
+      <capability name="evrc" value="false"/>
+      <capability name="amr" value="false"/>
+      <capability name="xmf" value="false"/>
+      <capability name="mmf" value="false"/>
+      <capability name="imelody" value="false"/>
+      <capability name="midi_monophonic" value="false"/>
+      <capability name="au" value="false"/>
+      <capability name="midi_polyphonic" value="false"/>
+    </group>
+    <group id="flash_lite">
+      <capability name="flash_lite_version" value=""/>
+      <capability name="fl_wallpaper" value="false"/>
+      <capability name="fl_browser" value="false"/>
+      <capability name="fl_screensaver" value="false"/>
+      <capability name="fl_standalone" value="false"/>
+      <capability name="fl_sub_lcd" value="false"/>
+    </group>
+    <group id="css">
+      <capability name="css_supports_width_as_percentage" value="true"/>
+    </group>
+    <group id="transcoding">
+      <capability name="is_transcoder" value="false"/>
+      <capability name="transcoder_ua_header" value="user-agent"/>
+    </group>
+    <group id="rss">
+      <capability name="rss_support" value="false"/>
+    </group>
+    <group id="pdf">
+      <capability name="pdf_support" value="false"/>
+    </group>
+  </device>
+  <device id="generic_xhtml" user_agent="Mozz" fall_back="generic">
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="1"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_make_phone_call_string" value="tel:"/>
+      <capability name="cookie_support" value="true"/>
+      <capability name="xhtml_table_support" value="true"/>
+      <capability name="xhtmlmp_preferred_mime_type" value="application/vnd.wap.xhtml+xml"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_height" value="92"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="92"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="gif_animated" value="true"/>
+      <capability name="png" value="true"/>
+      <capability name="colors" value="256"/>
+    </group>
+    <group id="storage">
+      <capability name="max_url_length_in_requests" value="256"/>
+    </group>
+  </device>
+  <device id="chtml_generic" user_agent="CHTML Generic" fall_back="generic">
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_imode_compact_generic" value="true"/>
+      <capability name="wml_1_1" value="true"/>
+      <capability name="preferred_markup" value="html_wi_imode_compact_generic"/>
+      <capability name="xhtml_support_level" value="1"/>
+    </group>
+  </device>
+  <device id="apple_generic" user_agent="Mozilla/5.0 (iPhone;" fall_back="generic_xhtml">
+    <group id="product_info">
+      <capability name="mobile_browser" value="Safari"/>
+      <capability name="has_pointing_device" value="true"/>
+      <capability name="device_os" value="iPhone OS"/>
+      <capability name="has_qwerty_keyboard" value="true"/>
+      <capability name="pointing_method" value="touchscreen"/>
+      <capability name="model_name" value="iPhone"/>
+      <capability name="device_claims_web_support" value="true"/>
+      <capability name="can_skip_aligned_link_row" value="true"/>
+      <capability name="brand_name" value="Apple"/>
+      <capability name="release_date" value="2007_june"/>
+    </group>
+    <group id="markup">
+      <capability name="html_web_3_2" value="true"/>
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="html_wi_imode_compact_generic" value="true"/>
+      <capability name="wml_1_1" value="false"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="4"/>
+      <capability name="html_web_4_0" value="true"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_supports_css_cell_table_coloring" value="true"/>
+      <capability name="xhtml_make_phone_call_string" value="tel:"/>
+      <capability name="xhtml_table_support" value="true"/>
+      <capability name="xhtml_display_accesskey" value="false"/>
+      <capability name="xhtmlmp_preferred_mime_type" value="application/xhtml+xml"/>
+      <capability name="xhtml_supports_file_upload" value="false"/>
+      <capability name="xhtml_format_as_attribute" value="false"/>
+      <capability name="xhtml_readable_background_color1" value="#D9EFFF"/>
+      <capability name="xhtml_supports_table_for_layout" value="true"/>
+      <capability name="xhtml_format_as_css_property" value="true"/>
+      <capability name="xhtml_honors_bgcolor" value="true"/>
+      <capability name="xhtml_support_iframe" value="true"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="gif_animated" value="true"/>
+      <capability name="png" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_acodec_amr" value="true"/>
+      <capability name="ringtone_voices" value="12"/>
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="video_vcodec_mpeg4" value="true"/>
+      <capability name="ringtone_amr" value="true"/>
+      <capability name="video_vcodec_h264" value="10 1b 11 12"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="video_3gpp2" value="false"/>
+      <capability name="video_mp4" value="false"/>
+      <capability name="video_3gpp" value="false"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="video_acodec_aac" value="true"/>
+      <capability name="video_vcodec_h263_0" value="true"/>
+      <capability name="ringtone_wav" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="video_mov" value="true"/>
+      <capability name="video_max_frame_rate" value="15"/>
+      <capability name="ringtone_aac" value="true"/>
+    </group>
+    <group id="ajax">
+      <capability name="ajax_xhr_type" value="standard"/>
+      <capability name="ajax_support_getelementbyid" value="true"/>
+      <capability name="ajax_support_event_listener" value="true"/>
+      <capability name="ajax_manipulate_dom" value="true"/>
+      <capability name="ajax_support_javascript" value="true"/>
+      <capability name="ajax_support_inner_html" value="true"/>
+      <capability name="ajax_manipulate_css" value="true"/>
+      <capability name="ajax_support_events" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="20"/>
+      <capability name="max_image_width" value="300"/>
+      <capability name="rows" value="20"/>
+      <capability name="resolution_width" value="300"/>
+      <capability name="resolution_height" value="300"/>
+      <capability name="max_image_height" value="300"/>
+    </group>
+    <group id="bearer">
+      <capability name="wifi" value="true"/>
+    </group>
+    <group id="css">
+      <capability name="css_supports_width_as_percentage" value="true"/>
+    </group>
+  </device>
+  <device id="nokia_generic" user_agent="Nokia" fall_back="generic">
+    <group id="product_info">
+      <capability name="mobile_browser" value="Nokia"/>
+      <capability name="brand_name" value="Nokia"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_nokia_ui" value="true"/>
+      <capability name="j2me_right_softkey_code" value="7"/>
+      <capability name="j2me_clear_key_code" value="8"/>
+      <capability name="j2me_left_softkey_code" value="6"/>
+    </group>
+    <group id="sms">
+      <capability name="nokiaring" value="true"/>
+      <capability name="operatorlogo" value="true"/>
+      <capability name="picturemessage" value="true"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="break_list_of_links_with_br_element_recommended" value="false"/>
+    </group>
+    <group id="css">
+      <capability name="css_supports_width_as_percentage" value="false"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series20" user_agent="Nokia 20" fall_back="nokia_generic">
+    <group id="product_info">
+      <capability name="mobile_browser" value="Nokia"/>
+      <capability name="nokia_series" value="20"/>
+      <capability name="nokia_edition" value="1"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="icons_on_menu_items_support" value="true"/>
+      <capability name="proportional_font" value="true"/>
+      <capability name="wrap_mode_support" value="true"/>
+      <capability name="image_as_link_support" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="10"/>
+      <capability name="rows" value="3"/>
+      <capability name="max_image_width" value="84"/>
+      <capability name="resolution_height" value="48"/>
+      <capability name="resolution_width" value="84"/>
+      <capability name="max_image_height" value="30"/>
+    </group>
+    <group id="image_format">
+      <capability name="gif" value="true"/>
+    </group>
+    <group id="storage">
+      <capability name="max_length_of_username" value="32"/>
+      <capability name="max_url_length_bookmark" value="255"/>
+      <capability name="max_no_of_bookmarks" value="15"/>
+      <capability name="max_deck_size" value="2868"/>
+      <capability name="max_url_length_cached_page" value="128"/>
+      <capability name="max_length_of_password" value="20"/>
+      <capability name="max_no_of_connection_settings" value="5"/>
+      <capability name="max_url_length_in_requests" value="538"/>
+      <capability name="max_url_length_homepage" value="100"/>
+    </group>
+    <group id="wta">
+      <capability name="nokia_voice_call" value="true"/>
+      <capability name="wta_phonebook" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="nokia_ringtone" value="true"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="opwv_xhtml_extensions_support" value="false"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series30" user_agent="Nokia 30" fall_back="nokia_generic_series20">
+    <group id="product_info">
+      <capability name="mobile_browser" value="Nokia"/>
+      <capability name="nokia_series" value="30"/>
+      <capability name="nokia_edition" value="1"/>
+      <capability name="can_skip_aligned_link_row" value="true"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="softkey_support" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="wml_1_2" value="true"/>
+      <capability name="wml_1_3" value="true"/>
+      <capability name="preferred_markup" value="wml_1_3"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_preferred_charset" value="iso8859"/>
+    </group>
+    <group id="display">
+      <capability name="rows" value="4"/>
+      <capability name="max_image_width" value="96"/>
+      <capability name="resolution_height" value="65"/>
+      <capability name="resolution_width" value="96"/>
+      <capability name="max_image_height" value="45"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionless_service_indication" value="true"/>
+      <capability name="ascii_support" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+      <capability name="connectionoriented_unconfirmed_service_indication" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="sp_midi" value="true"/>
+      <capability name="voices" value="4"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_preferred_width" value="96"/>
+      <capability name="ringtone_voices" value="4"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="wallpaper_colors" value="4"/>
+      <capability name="wallpaper_max_height" value="35"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_max_width" value="96"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_preferred_width" value="96"/>
+      <capability name="screensaver_preferred_height" value="65"/>
+      <capability name="picture_colors" value="16"/>
+      <capability name="wallpaper_preferred_height" value="35"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="picture_preferred_width" value="96"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="ringtone_spmidi" value="true"/>
+      <capability name="inline_support" value="true"/>
+      <capability name="picture_preferred_height" value="48"/>
+      <capability name="screensaver_colors" value="16"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series40" user_agent="Nokia 40" fall_back="nokia_generic_series30">
+    <group id="product_info">
+      <capability name="mobile_browser" value="Nokia"/>
+      <capability name="nokia_series" value="40"/>
+      <capability name="nokia_edition" value="1"/>
+      <capability name="can_skip_aligned_link_row" value="true"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_table_support" value="true"/>
+      <capability name="xhtml_supports_file_upload" value="true"/>
+      <capability name="xhtml_file_upload" value="supported"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="1"/>
+      <capability name="multipart_support" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="rows" value="5"/>
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_height" value="128"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="96"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="bmp" value="true"/>
+      <capability name="colors" value="4096"/>
+      <capability name="png" value="true"/>
+    </group>
+    <group id="storage">
+      <capability name="max_no_of_bookmarks" value="25"/>
+      <capability name="max_deck_size" value="10000"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_wbxml" value="true"/>
+      <capability name="mms_png" value="true"/>
+      <capability name="mms_max_size" value="32768"/>
+      <capability name="mms_nokia_operatorlogo" value="true"/>
+      <capability name="mms_max_width" value="352"/>
+      <capability name="mms_wml" value="true"/>
+      <capability name="mms_spmidi" value="true"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="mms_max_height" value="288"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_jad" value="true"/>
+      <capability name="mms_nokia_ringingtone" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_wmlc" value="true"/>
+      <capability name="mms_nokia_wallpaper" value="true"/>
+      <capability name="mms_bmp" value="true"/>
+      <capability name="mms_jar" value="true"/>
+      <capability name="mms_wbmp" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+      <capability name="mms_gif_animated" value="true"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midi" value="true"/>
+      <capability name="j2me_middle_softkey_code" value="-5"/>
+      <capability name="j2me_max_jar_size" value="65536"/>
+      <capability name="j2me_screen_height" value="128"/>
+      <capability name="j2me_right_softkey_code" value="-7"/>
+      <capability name="j2me_screen_width" value="128"/>
+      <capability name="j2me_clear_key_code" value="-8"/>
+      <capability name="j2me_left_softkey_code" value="-6"/>
+      <capability name="j2me_heap_size" value="204800"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="picture_jpg" value="true"/>
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="128"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_amr" value="true"/>
+      <capability name="screensaver_max_height" value="128"/>
+      <capability name="wallpaper_colors" value="12"/>
+      <capability name="wallpaper_max_height" value="128"/>
+      <capability name="picture_gif" value="true"/>
+      <capability name="picture_max_width" value="126"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="screensaver_max_width" value="128"/>
+      <capability name="wallpaper_max_width" value="128"/>
+      <capability name="picture_bmp" value="true"/>
+      <capability name="screensaver_bmp" value="true"/>
+      <capability name="screensaver_wbmp" value="true"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_wbmp" value="true"/>
+      <capability name="wallpaper_preferred_width" value="128"/>
+      <capability name="screensaver_preferred_height" value="128"/>
+      <capability name="picture_colors" value="12"/>
+      <capability name="wallpaper_preferred_height" value="128"/>
+      <capability name="picture_preferred_width" value="126"/>
+      <capability name="picture_max_height" value="94"/>
+      <capability name="picture_png" value="true"/>
+      <capability name="picture_wbmp" value="true"/>
+      <capability name="screensaver_png" value="true"/>
+      <capability name="wallpaper_bmp" value="true"/>
+      <capability name="picture_preferred_height" value="94"/>
+      <capability name="screensaver_colors" value="12"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series40_dp20" user_agent="Nokia 40 Developer Platform 2.0" fall_back="nokia_generic_series40">
+    <group id="product_info">
+      <capability name="nokia_edition" value="2"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_supports_css_cell_table_coloring" value="true"/>
+      <capability name="xhtml_make_phone_call_string" value="wtai://wp/mc;"/>
+      <capability name="xhtml_table_support" value="true"/>
+      <capability name="xhtml_display_accesskey" value="true"/>
+      <capability name="xhtmlmp_preferred_mime_type" value="application/xhtml+xml"/>
+      <capability name="xhtml_readable_background_color1" value="#D9EFFF"/>
+      <capability name="xhtml_supports_table_for_layout" value="true"/>
+      <capability name="xhtml_format_as_css_property" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="18"/>
+    </group>
+    <group id="image_format">
+      <capability name="bmp" value="false"/>
+      <capability name="gif_animated" value="true"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="102400"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_2_0" value="true"/>
+      <capability name="j2me_3gpp" value="true"/>
+      <capability name="j2me_wmapi_1_0" value="true"/>
+      <capability name="j2me_mmapi_1_0" value="true"/>
+      <capability name="j2me_max_jar_size" value="131072"/>
+      <capability name="j2me_bits_per_pixel" value="16"/>
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_heap_size" value="524288"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_max_size" value="105000"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_vcard" value="true"/>
+      <capability name="mms_amr" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="amr" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_directdownload_size_limit" value="2097152"/>
+      <capability name="picture_bmp" value="false"/>
+      <capability name="screensaver_bmp" value="false"/>
+      <capability name="wallpaper_bmp" value="false"/>
+      <capability name="oma_support" value="true"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_combined_delivery" value="true"/>
+      <capability name="oma_v_1_0_separate_delivery" value="true"/>
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_3gpp" value="true"/>
+      <capability name="streaming_video" value="true"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series40_dp30" user_agent="Nokia 40 Developer Platform 3.0" fall_back="nokia_generic_series40_dp20">
+    <group id="sound_format">
+      <capability name="awb" value="true"/>
+      <capability name="aac" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="picture_directdownload_size_limit" value="4194304"/>
+      <capability name="ringtone_awb" value="true"/>
+      <capability name="ringtone_aac" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="nokia_edition" value="3"/>
+    </group>
+    <group id="css">
+      <capability name="css_supports_width_as_percentage" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="2"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series60" user_agent="Nokia 60" fall_back="nokia_generic_series40">
+    <group id="product_info">
+      <capability name="mobile_browser" value="Nokia"/>
+      <capability name="nokia_series" value="60"/>
+      <capability name="device_os" value="Symbian OS"/>
+      <capability name="nokia_edition" value="1"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="built_in_back_button_support" value="true"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_make_phone_call_string" value="wtai://wp/mc;"/>
+      <capability name="xhtml_table_support" value="true"/>
+      <capability name="xhtmlmp_preferred_mime_type" value="application/xhtml+xml"/>
+      <capability name="xhtml_supports_table_for_layout" value="true"/>
+      <capability name="xhtml_format_as_css_property" value="true"/>
+      <capability name="xhtml_honors_bgcolor" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="2"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="357000"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="21"/>
+      <capability name="rows" value="8"/>
+      <capability name="max_image_width" value="168"/>
+      <capability name="resolution_height" value="208"/>
+      <capability name="resolution_width" value="176"/>
+      <capability name="max_image_height" value="144"/>
+    </group>
+    <group id="image_format">
+      <capability name="epoc_bmp" value="true"/>
+      <capability name="gif_animated" value="true"/>
+      <capability name="tiff" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_3gpp" value="true"/>
+      <capability name="mms_symbian_install" value="true"/>
+      <capability name="mms_max_size" value="102400"/>
+      <capability name="mms_rmf" value="true"/>
+      <capability name="mms_max_width" value="640"/>
+      <capability name="mms_max_height" value="480"/>
+      <capability name="mms_video" value="true"/>
+      <capability name="mms_vcard" value="true"/>
+      <capability name="mms_wav" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_amr" value="true"/>
+      <capability name="built_in_camera" value="true"/>
+      <capability name="mms_mp4" value="true"/>
+      <capability name="mms_midi_polyphonic_voices" value="24"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_3gpp" value="true"/>
+      <capability name="j2me_wmapi_1_0" value="true"/>
+      <capability name="j2me_mmapi_1_0" value="true"/>
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_amr" value="true"/>
+      <capability name="j2me_datefield_no_accepts_null_date" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="rmf" value="true"/>
+      <capability name="wav" value="true"/>
+      <capability name="voices" value="24"/>
+      <capability name="amr" value="true"/>
+      <capability name="au" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_acodec_amr" value="true"/>
+      <capability name="video_directdownload_size_limit" value="102400"/>
+      <capability name="video_max_width" value="176"/>
+      <capability name="screensaver_preferred_width" value="176"/>
+      <capability name="ringtone_voices" value="24"/>
+      <capability name="ringtone_amr" value="true"/>
+      <capability name="ringtone_xmf" value="true"/>
+      <capability name="screensaver_max_height" value="208"/>
+      <capability name="wallpaper_max_height" value="143"/>
+      <capability name="picture_max_width" value="176"/>
+      <capability name="screensaver_max_width" value="176"/>
+      <capability name="wallpaper_max_width" value="174"/>
+      <capability name="wallpaper_preferred_width" value="176"/>
+      <capability name="video_real_media_8" value="true"/>
+      <capability name="screensaver_preferred_height" value="208"/>
+      <capability name="wallpaper_preferred_height" value="144"/>
+      <capability name="video_max_height" value="144"/>
+      <capability name="video_mp4" value="true"/>
+      <capability name="video_3gpp" value="true"/>
+      <capability name="picture_max_height" value="144"/>
+      <capability name="ringtone_directdownload_size_limit" value="61440"/>
+      <capability name="ringtone_rmf" value="true"/>
+      <capability name="picture_preferred_width" value="174"/>
+      <capability name="picture" value="true"/>
+      <capability name="video_sqcif" value="true"/>
+      <capability name="video_vcodec_h263_0" value="true"/>
+      <capability name="video_qcif" value="true"/>
+      <capability name="ringtone_wav" value="true"/>
+      <capability name="video_preferred_width" value="176"/>
+      <capability name="oma_support" value="true"/>
+      <capability name="video_preferred_height" value="144"/>
+      <capability name="video" value="true"/>
+      <capability name="video_max_frame_rate" value="15"/>
+      <capability name="picture_preferred_height" value="143"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_real_media_8" value="true"/>
+      <capability name="streaming_video" value="true"/>
+      <capability name="streaming_video_qcif" value="true"/>
+      <capability name="streaming_video_qcif_max_height" value="144"/>
+      <capability name="streaming_video_qcif_max_width" value="176"/>
+    </group>
+    <group id="wta">
+      <capability name="wta_voice_call" value="true"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series60_dp20" user_agent="Nokia 60 Developer Platform 2.0" fall_back="nokia_generic_series60">
+    <group id="product_info">
+      <capability name="nokia_edition" value="2"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="2"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_2_0" value="true"/>
+      <capability name="j2me_btapi" value="true"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_preferred_charset" value="utf8"/>
+      <capability name="xhtml_send_mms_string" value="mmsto:"/>
+      <capability name="xhtml_send_sms_string" value="sms:"/>
+    </group>
+    <group id="display">
+      <capability name="rows" value="6"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_mp3" value="true"/>
+      <capability name="mms_xmf" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="awb" value="true"/>
+      <capability name="mp3" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="video_vcodec_h264" value="10"/>
+      <capability name="wallpaper_tiff" value="true"/>
+      <capability name="ringtone_wav" value="true"/>
+      <capability name="ringtone_awb" value="true"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_video_vcodec_mpeg4" value="true"/>
+      <capability name="streaming_3gpp" value="true"/>
+      <capability name="streaming_video_acodec_awb" value="true"/>
+      <capability name="streaming_mp4" value="true"/>
+      <capability name="streaming_video_vcodec_h264" value="none"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series60_dp30" user_agent="Nokia 60 Developer Platform 3.0" fall_back="nokia_generic_series60_dp20">
+    <group id="product_info">
+      <capability name="nokia_edition" value="3"/>
+      <capability name="device_claims_web_support" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="3"/>
+    </group>
+    <group id="ajax">
+      <capability name="ajax_support_javascript" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_directdownload_size_limit" value="8388608"/>
+      <capability name="picture_max_height" value="293"/>
+      <capability name="picture_preferred_height" value="263"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_right_softkey_code" value="-7"/>
+      <capability name="j2me_left_softkey_code" value="-6"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_video_vcodec_h264" value="10"/>
+    </group>
+    <group id="flash_lite">
+      <capability name="flash_lite_version" value="1_1"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series80" user_agent="Nokia 80" fall_back="nokia_generic_series60">
+    <group id="product_info">
+      <capability name="nokia_series" value="80"/>
+      <capability name="nokia_edition" value="1"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_1" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="27"/>
+      <capability name="max_image_width" value="400"/>
+      <capability name="resolution_height" value="200"/>
+      <capability name="resolution_width" value="640"/>
+      <capability name="max_image_height" value="180"/>
+    </group>
+    <group id="storage">
+      <capability name="max_length_of_username" value="50"/>
+      <capability name="max_url_length_bookmark" value="1000"/>
+      <capability name="max_no_of_bookmarks" value="50"/>
+      <capability name="max_deck_size" value="8192"/>
+      <capability name="max_url_length_cached_page" value="1000"/>
+      <capability name="max_length_of_password" value="50"/>
+      <capability name="max_no_of_connection_settings" value="20"/>
+      <capability name="max_url_length_in_requests" value="1000"/>
+      <capability name="max_url_length_homepage" value="1000"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_make_phone_call_string" value="none"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_service_indication" value="false"/>
+      <capability name="ascii_support" value="false"/>
+      <capability name="wap_push_support" value="false"/>
+      <capability name="connectionoriented_unconfirmed_service_indication" value="false"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_preferred_width" value="640"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper_preferred_width" value="640"/>
+      <capability name="screensaver_preferred_height" value="200"/>
+      <capability name="picture_colors" value="16"/>
+      <capability name="wallpaper_preferred_height" value="200"/>
+      <capability name="picture_preferred_width" value="640"/>
+      <capability name="picture_preferred_height" value="200"/>
+      <capability name="screensaver_colors" value="16"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_3gpp" value="false"/>
+      <capability name="mms_wbxml" value="false"/>
+      <capability name="mms_symbian_install" value="false"/>
+      <capability name="mms_png" value="false"/>
+      <capability name="mms_max_size" value="0"/>
+      <capability name="mms_rmf" value="false"/>
+      <capability name="mms_nokia_operatorlogo" value="false"/>
+      <capability name="mms_max_width" value="0"/>
+      <capability name="mms_wml" value="false"/>
+      <capability name="mms_gif_static" value="false"/>
+      <capability name="mms_spmidi" value="false"/>
+      <capability name="mms_max_height" value="0"/>
+      <capability name="sender" value="false"/>
+      <capability name="mms_video" value="false"/>
+      <capability name="mms_vcard" value="false"/>
+      <capability name="mms_midi_polyphonic" value="false"/>
+      <capability name="mms_wav" value="false"/>
+      <capability name="mms_jad" value="false"/>
+      <capability name="mms_nokia_ringingtone" value="false"/>
+      <capability name="mms_midi_monophonic" value="false"/>
+      <capability name="mms_wmlc" value="false"/>
+      <capability name="mms_nokia_wallpaper" value="false"/>
+      <capability name="mms_bmp" value="false"/>
+      <capability name="mms_jar" value="false"/>
+      <capability name="mms_amr" value="false"/>
+      <capability name="mms_wbmp" value="false"/>
+      <capability name="built_in_camera" value="false"/>
+      <capability name="receiver" value="false"/>
+      <capability name="mms_mp4" value="false"/>
+      <capability name="mms_jpeg_baseline" value="false"/>
+      <capability name="mms_midi_polyphonic_voices" value="0"/>
+      <capability name="mms_gif_animated" value="false"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series80_dp20" user_agent="Nokia 80 Developer Platform 2.0" fall_back="nokia_generic_series80">
+    <group id="product_info">
+      <capability name="nokia_edition" value="2"/>
+    </group>
+    <group id="markup">
+      <capability name="html_web_3_2" value="true"/>
+      <capability name="xhtml_support_level" value="3"/>
+      <capability name="html_web_4_0" value="true"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_service_indication" value="true"/>
+      <capability name="ascii_support" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_service_indication" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_3gpp" value="true"/>
+      <capability name="mms_wbxml" value="true"/>
+      <capability name="mms_symbian_install" value="true"/>
+      <capability name="mms_nokia_operatorlogo" value="true"/>
+      <capability name="mms_rmf" value="true"/>
+      <capability name="mms_max_frame_rate" value="10"/>
+      <capability name="mms_wml" value="true"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_video" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_vcard" value="true"/>
+      <capability name="mms_jad" value="true"/>
+      <capability name="mms_nokia_ringingtone" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_wmlc" value="true"/>
+      <capability name="mms_nokia_wallpaper" value="true"/>
+      <capability name="mms_jar" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_mp4" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_video_max_bit_rate" value="131072"/>
+      <capability name="streaming_3gpp" value="true"/>
+      <capability name="streaming_video_acodec_awb" value="true"/>
+      <capability name="streaming_video_max_frame_rate" value="10"/>
+      <capability name="streaming_mp4" value="true"/>
+    </group>
+  </device>
+  <device id="nokia_generic_series90_dp20" user_agent="Nokia 90 Developer Platform 2.0" fall_back="nokia_generic_series80_dp20">
+    <group id="product_info">
+      <capability name="nokia_series" value="90"/>
+      <capability name="nokia_edition" value="1"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_video_acodec_aac" value="true"/>
+    </group>
+  </device>
+  <device id="uptext_generic" user_agent="UP.Browser/4" fall_back="generic">
+    <group id="wml_ui">
+      <capability name="icons_on_menu_items_support" value="true"/>
+      <capability name="opwv_wml_extensions_support" value="true"/>
+      <capability name="built_in_back_button_support" value="true"/>
+      <capability name="proportional_font" value="true"/>
+      <capability name="wizards_recommended" value="true"/>
+      <capability name="softkey_support" value="true"/>
+      <capability name="deck_prefetch_support" value="true"/>
+      <capability name="menu_with_select_element_recommended" value="true"/>
+      <capability name="numbered_menus" value="true"/>
+      <capability name="card_title_support" value="false"/>
+      <capability name="wrap_mode_support" value="true"/>
+      <capability name="access_key_support" value="true"/>
+      <capability name="elective_forms_recommended" value="false"/>
+      <capability name="times_square_mode_support" value="true"/>
+      <capability name="break_list_of_links_with_br_element_recommended" value="false"/>
+      <capability name="menu_with_list_of_links_recommended" value="false"/>
+    </group>
+    <group id="cache">
+      <capability name="time_to_live_support" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="preferred_markup" value="wml_1_1"/>
+      <capability name="xhtml_support_level" value="-1"/>
+      <capability name="multipart_support" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser" value="Openwave Mobile Browser"/>
+      <capability name="mobile_browser_version" value="4.0"/>
+    </group>
+  </device>
+  <device id="upgui_generic" user_agent="UP.Browser/5" fall_back="generic">
+    <group id="bugs">
+      <capability name="empty_option_value_support" value="false"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="icons_on_menu_items_support" value="true"/>
+      <capability name="opwv_wml_extensions_support" value="true"/>
+      <capability name="built_in_back_button_support" value="true"/>
+      <capability name="proportional_font" value="true"/>
+      <capability name="softkey_support" value="true"/>
+      <capability name="deck_prefetch_support" value="true"/>
+      <capability name="menu_with_select_element_recommended" value="true"/>
+      <capability name="numbered_menus" value="true"/>
+      <capability name="wrap_mode_support" value="true"/>
+      <capability name="access_key_support" value="true"/>
+      <capability name="times_square_mode_support" value="true"/>
+      <capability name="break_list_of_links_with_br_element_recommended" value="false"/>
+      <capability name="menu_with_list_of_links_recommended" value="false"/>
+    </group>
+    <group id="markup">
+      <capability name="wml_1_2" value="true"/>
+      <capability name="wml_1_3" value="true"/>
+      <capability name="preferred_markup" value="wml_1_3"/>
+      <capability name="xhtml_support_level" value="-1"/>
+      <capability name="multipart_support" value="true"/>
+    </group>
+    <group id="wap_push">
+      <capability name="expiration_date" value="true"/>
+      <capability name="utf8_support" value="true"/>
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionless_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+      <capability name="connectionoriented_unconfirmed_service_load" value="true"/>
+      <capability name="connectionoriented_unconfirmed_service_indication" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser" value="Openwave Mobile Browser"/>
+      <capability name="mobile_browser_version" value="5.0"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="accept_third_party_cookie" value="false"/>
+    </group>
+  </device>
+  <device id="opwv_v6_generic" user_agent="UP.Browser/6" fall_back="upgui_generic">
+    <group id="markup">
+      <capability name="html_wi_imode_htmlx_1" value="true"/>
+      <capability name="html_wi_imode_html_1" value="true"/>
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_imode_html_2" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="html_wi_imode_compact_generic" value="true"/>
+      <capability name="html_wi_imode_html_3" value="true"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="1"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_preferred_charset" value="iso8859"/>
+      <capability name="xhtml_autoexpand_select" value="true"/>
+      <capability name="xhtml_supports_css_cell_table_coloring" value="true"/>
+      <capability name="xhtml_make_phone_call_string" value="wtai://wp/mc;"/>
+      <capability name="xhtml_allows_disabled_form_elements" value="true"/>
+      <capability name="xhtml_supports_invisible_text" value="true"/>
+      <capability name="cookie_support" value="true"/>
+      <capability name="xhtml_table_support" value="true"/>
+      <capability name="xhtml_supports_monospace_font" value="true"/>
+      <capability name="xhtml_supports_inline_input" value="true"/>
+      <capability name="xhtml_readable_background_color1" value="#99CCFF"/>
+      <capability name="xhtml_format_as_attribute" value="true"/>
+      <capability name="xhtml_supports_table_for_layout" value="true"/>
+      <capability name="opwv_xhtml_extensions_support" value="true"/>
+      <capability name="xhtml_nowrap_mode" value="true"/>
+    </group>
+    <group id="chtml_ui">
+      <capability name="chtml_make_phone_call_string" value="tel:"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="colors" value="256"/>
+      <capability name="png" value="true"/>
+    </group>
+    <group id="wta">
+      <capability name="wta_voice_call" value="true"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="4096"/>
+    </group>
+    <group id="security">
+      <capability name="https_support" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser" value="Openwave Mobile Browser"/>
+      <capability name="mobile_browser_version" value="6.0"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="resolution_height" value="120"/>
+      <capability name="max_image_height" value="128"/>
+    </group>
+  </device>
+  <device id="opwv_v61_generic" user_agent="UP.Browser/6.1" fall_back="opwv_v6_generic">
+    <group id="object_download">
+      <capability name="oma_support" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="1"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="6.1"/>
+      <capability name="release_date" value="2002_august"/>
+    </group>
+  </device>
+  <device id="opwv_v62_generic" user_agent="UP.Browser/6.2" fall_back="opwv_v61_generic">
+    <group id="xhtml_ui">
+      <capability name="cookie_support" value="true"/>
+      <capability name="xhtml_format_as_css_property" value="true"/>
+      <capability name="xhtml_file_upload" value="supported"/>
+      <capability name="xhtml_marquee_as_css_property" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="3"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser" value="Openwave Mobile Browser"/>
+      <capability name="mobile_browser_version" value="6.2"/>
+      <capability name="can_skip_aligned_link_row" value="true"/>
+      <capability name="release_date" value="2003_january"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_width" value="120"/>
+      <capability name="resolution_height" value="120"/>
+      <capability name="max_image_height" value="96"/>
+    </group>
+    <group id="css">
+      <capability name="css_supports_width_as_percentage" value="true"/>
+    </group>
+  </device>
+  <device id="opwv_v7_generic" user_agent="UP.Browser/7" fall_back="opwv_v62_generic">
+    <group id="markup">
+      <capability name="xhtml_support_level" value="3"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_combined_delivery" value="true"/>
+      <capability name="oma_v_1_0_separate_delivery" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="7"/>
+      <capability name="can_skip_aligned_link_row" value="true"/>
+      <capability name="release_date" value="2005_january"/>
+    </group>
+  </device>
+  <device id="opwv_v72_generic" user_agent="UP.Browser/7.2" fall_back="opwv_v7_generic">
+    <group id="markup">
+      <capability name="xhtml_support_level" value="4"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="7.2"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_send_mms_string" value="mmsto:"/>
+      <capability name="xhtml_send_sms_string" value="smsto:"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm180_ver1" user_agent="AUDIOVOX-CDM180" fall_back="generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="mobile_browser" value="Openwave Mobile Browser"/>
+      <capability name="model_name" value="CDM-180"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="152"/>
+      <capability name="resolution_height" value="128"/>
+      <capability name="resolution_width" value="160"/>
+      <capability name="max_image_height" value="108"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="gif_animated" value="true"/>
+      <capability name="colors" value="262144"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="160"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="screensaver_max_height" value="128"/>
+      <capability name="wallpaper_colors" value="18"/>
+      <capability name="wallpaper_max_height" value="128"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="screensaver_directdownload_size_limit" value="128000"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="screensaver_max_width" value="160"/>
+      <capability name="wallpaper_directdownload_size_limit" value="128000"/>
+      <capability name="wallpaper_max_width" value="160"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="160"/>
+      <capability name="screensaver_preferred_height" value="128"/>
+      <capability name="wallpaper_preferred_height" value="128"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="128000"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="ringtone_spmidi" value="true"/>
+      <capability name="screensaver_colors" value="18"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_jpeg_progressive" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+      <capability name="mms_midi_polyphonic_voices" value="32"/>
+      <capability name="mms_gif_animated" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="voices" value="32"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="-1"/>
+      <capability name="preferred_markup" value="wml_1_1"/>
+    </group>
+  </device>
+  <device id="verizon_audiovox_cdm180_ver1" user_agent="audio180" fall_back="audiovox_cdm180_ver1" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-180"/>
+      <capability name="model_extra_info" value="Verizon Wireless"/>
+    </group>
+    <group id="object_download">
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="video_3gpp2" value="true"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="video" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="-1"/>
+      <capability name="preferred_markup" value="wml_1_1"/>
+    </group>
+  </device>
+  <device id="cdm_230_ver1" user_agent="CDM-230" fall_back="opwv_v62_generic"/>
+  <device id="cdm_230_ver1_sub20" user_agent="CDM-230/T01_01 UP.Browser/6.2.3.2 (GUI) MMP/2.0" fall_back="cdm_230_ver1"/>
+  <device id="cdm_8150_ver1" user_agent="CDM-8150" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="can_skip_aligned_link_row" value="true"/>
+      <capability name="model_name" value="CDM 8150"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="resolution_height" value="128"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+  </device>
+  <device id="cdm_8150_ver1_sub4126c4" user_agent="CDM-8150/P15 UP.Browser/4.1.26c4" fall_back="cdm_8150_ver1"/>
+  <device id="hcitx21b_ver1_sub41222" user_agent="HCITX21B/T09 UP.Browser/4.1.22b2" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8200"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+  </device>
+  <device id="cdm_8300_ver1" user_agent="CDM-8300" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8300"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+  </device>
+  <device id="cdm_8300_ver1_sub4126" user_agent="CDM-8300/T10 UP.Browser/4.1.26l" fall_back="cdm_8300_ver1"/>
+  <device id="cdm_8400_ver1" user_agent="CDM-8400" fall_back="upgui_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8400"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+  </device>
+  <device id="cdm_8400_ver1_sub5052" user_agent="CDM-8400/505 UP.Browser/5.0.5.2 (GUI)" fall_back="cdm_8400_ver1"/>
+  <device id="cdm_8400_ver1_sub5054" user_agent="CDM-8400/505 UP.Browser/5.0.5.4 (GUI)" fall_back="cdm_8400_ver1"/>
+  <device id="cdm_8450_ver1" user_agent="AUDIOVOX-CDM8450" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://uaprof.bellmobilite.ca/BMC_Audiovox_CDM-8450_P08.rdf"/>
+      <capability name="model_name" value="CDM-8450"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="16"/>
+      <capability name="rows" value="7"/>
+      <capability name="max_image_width" value="121"/>
+      <capability name="resolution_height" value="96"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="76"/>
+    </group>
+    <group id="image_format">
+      <capability name="colors" value="4096"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="65535"/>
+    </group>
+    <group id="object_download">
+      <capability name="ringtone_midi_monophonic" value="true"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_screen_height" value="96"/>
+      <capability name="j2me_screen_width" value="128"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="compactmidi" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+    </group>
+  </device>
+  <device id="cdm_8450_ver1_sub6221" user_agent="CDM-8450 UP.Browser/6.2.2.1 (GUI) MMP/2.0" fall_back="cdm_8450_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="cdm_8450sp_ver1" user_agent="AUDIOVOX-CDM8450SP" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://device.sprintpcs.com/Audiovox/CDM-8450SP/T060SP2T36.rdf"/>
+      <capability name="model_name" value="CDM-8450SP"/>
+      <capability name="uaprof2" value="http://device.sprintpcs.com/Audiovox/CDM-8450SP/T060SP2T37.rdf"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="16"/>
+      <capability name="rows" value="7"/>
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_height" value="128"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="96"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="false"/>
+      <capability name="gif" value="false"/>
+      <capability name="bmp" value="true"/>
+      <capability name="colors" value="4096"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="qcelp" value="true"/>
+      <capability name="voices" value="32"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_preferred_width" value="128"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_colors" value="12"/>
+      <capability name="wallpaper_max_height" value="80"/>
+      <capability name="screensaver_max_height" value="80"/>
+      <capability name="wallpaper_directdownload_size_limit" value="65536"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="screensaver_max_width" value="128"/>
+      <capability name="wallpaper_max_width" value="128"/>
+      <capability name="screensaver_directdownload_size_limit" value="65536"/>
+      <capability name="screensaver_bmp" value="true"/>
+      <capability name="wallpaper_preferred_width" value="128"/>
+      <capability name="screensaver_preferred_height" value="80"/>
+      <capability name="wallpaper_preferred_height" value="80"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="65536"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="wallpaper_bmp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver_png" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="screensaver_colors" value="12"/>
+    </group>
+  </device>
+  <device id="cdm_8450sp_ver1_subt060sp2t36" user_agent="AUDIOVOX-CDM8450SP/T060SP2T36 UP.Browser/6.2.2.1 (GUI) MMP/2.0" fall_back="cdm_8450sp_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="cdm_8450sp_ver1_subt060sp2t37" user_agent="AUDIOVOX-CDM8450SP/T060SP2T37 UP.Browser/6.2.2.1 (GUI) MMP/2.0" fall_back="cdm_8450sp_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="cdm_8500_ver1" user_agent="CDM-8500" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8500"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+  </device>
+  <device id="cdm_8500_ver1_sub4126" user_agent="CDM-8500/T10 UP.Browser/4.1.26l" fall_back="cdm_8500_ver1"/>
+  <device id="cdm_8600_ver1" user_agent="CDM-8600" fall_back="upgui_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8600"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="image_format">
+      <capability name="png" value="true"/>
+    </group>
+  </device>
+  <device id="cdm_8600_ver1_sub00" user_agent="CDM-8600/T10 UP.Browser/5.0.5 (GUI)" fall_back="cdm_8600_ver1"/>
+  <device id="cdm_8610vm_ver1" user_agent="CDM-8610VM" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM 8610VM"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="resolution_height" value="128"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+  </device>
+  <device id="cdm_8610vm_ver1_sub4126" user_agent="CDM-8610VM/T01 UP.Browser/4.1.26l" fall_back="cdm_8610vm_ver1"/>
+  <device id="cdm_8900_ver1" user_agent="CDM-8900" fall_back="upgui_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8900"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="gif_animated" value="true"/>
+      <capability name="colors" value="65536"/>
+      <capability name="png" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_max_size" value="102400"/>
+      <capability name="mms_max_width" value="128"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="mms_max_height" value="160"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_qcelp" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_jpeg_progressive" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_mp3" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+      <capability name="mms_gif_animated" value="true"/>
+      <capability name="mms_midi_polyphonic_voices" value="32"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="118"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="140"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="128"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper_max_height" value="160"/>
+      <capability name="screensaver_max_height" value="160"/>
+      <capability name="wallpaper_directdownload_size_limit" value="102400"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="screensaver_max_width" value="128"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="wallpaper_max_width" value="128"/>
+      <capability name="screensaver_directdownload_size_limit" value="102400"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="128"/>
+      <capability name="screensaver_preferred_height" value="160"/>
+      <capability name="wallpaper_preferred_height" value="160"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="102400"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="screensaver_colors" value="16"/>
+    </group>
+    <group id="sound_format">
+      <capability name="qcelp" value="true"/>
+      <capability name="voices" value="32"/>
+      <capability name="mp3" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+  </device>
+  <device id="cdm_8900_ver1_sub00" user_agent="CDM-8900/T10 UP.Browser/5.0.5.4 (GUI)" fall_back="cdm_8900_ver1"/>
+  <device id="verizon_cdm_8900_ver1" user_agent="audio8900" fall_back="cdm_8900_ver1" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8900"/>
+      <capability name="model_extra_info" value="Verizon Wireless"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_3gpp2" value="true"/>
+      <capability name="video" value="true"/>
+    </group>
+  </device>
+  <device id="cdm_8900tm_ver1" user_agent="CDM-8900TM" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://device.telusmobility.com/audiovox/cdm-8900.rdf"/>
+      <capability name="model_name" value="CDM-8900"/>
+      <capability name="brand_name" value="Audiovox"/>
+      <capability name="model_extra_info" value="Telus Mobility"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="16"/>
+      <capability name="max_image_width" value="118"/>
+      <capability name="rows" value="7"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="120"/>
+    </group>
+    <group id="image_format">
+      <capability name="bmp" value="true"/>
+      <capability name="colors" value="4096"/>
+    </group>
+    <group id="object_download">
+      <capability name="downloadfun_support" value="true"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_png" value="true"/>
+      <capability name="mms_max_size" value="204800"/>
+      <capability name="mms_max_width" value="640"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_max_height" value="480"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="compactmidi" value="true"/>
+    </group>
+  </device>
+  <device id="cdm_8900tm_ver1_sub6223d1103" user_agent="CDM-8900TM/6.2 UP.Browser/6.2.2.3.d.1.103 (GUI) MMP/2.0" fall_back="cdm_8900tm_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="cdm_8900tm_ver1_sub6223d2101" user_agent="CDM-8900TM/6.2 UP.Browser/6.2.2.3.d.2.101 (GUI) MMP/2.0" fall_back="cdm_8900tm_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8910_ver1" user_agent="AUDIOVOX-CDM8910" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8910"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="sound_format">
+      <capability name="qcelp" value="true"/>
+      <capability name="voices" value="32"/>
+      <capability name="mp3" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_max_size" value="102400"/>
+      <capability name="mms_max_width" value="128"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="mms_max_height" value="160"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_qcelp" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_jpeg_progressive" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_mp3" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+      <capability name="mms_gif_animated" value="true"/>
+      <capability name="mms_midi_polyphonic_voices" value="32"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="118"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="140"/>
+    </group>
+    <group id="image_format">
+      <capability name="gif_animated" value="true"/>
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="128"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper_max_height" value="160"/>
+      <capability name="screensaver_max_height" value="160"/>
+      <capability name="wallpaper_directdownload_size_limit" value="102400"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="screensaver_max_width" value="128"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="wallpaper_max_width" value="128"/>
+      <capability name="screensaver_directdownload_size_limit" value="102400"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="128"/>
+      <capability name="screensaver_preferred_height" value="160"/>
+      <capability name="wallpaper_preferred_height" value="160"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="102400"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="screensaver_colors" value="16"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8910_ver1_sub6231" user_agent="AUDIOVOX-CDM8910 UP.Browser/6.2.3.1 (GUI) MMP/2.0" fall_back="audiovox_cdm8910_ver1"/>
+  <device id="audiovox_cdm8910_ver1_sub6232" user_agent="AUDIOVOX-CDM8910 UP.Browser/6.2.3.2 (GUI) MMP/2.0" fall_back="audiovox_cdm8910_ver1"/>
+  <device id="verizon_audiovox_cdm8910_ver1" user_agent="audio8910" fall_back="audiovox_cdm8910_ver1" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8910"/>
+      <capability name="model_extra_info" value="Verizon Wireless"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8912sp_ver1" user_agent="AUDIOVOX-CDM8912SP" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://device.sprintpcs.com/Audiovox/CDM8912SP/T115SP0T13.rdf"/>
+      <capability name="model_name" value="CDM-8912"/>
+      <capability name="uaprof2" value="http://www.alltel.net/uaprof/audiovox/8910/8910.xml"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="9"/>
+      <capability name="rows" value="11"/>
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="140"/>
+    </group>
+    <group id="image_format">
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_screen_height" value="160"/>
+      <capability name="j2me_screen_width" value="128"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_png" value="true"/>
+      <capability name="mms_max_size" value="128000"/>
+      <capability name="mms_max_width" value="640"/>
+      <capability name="mms_spmidi" value="true"/>
+      <capability name="mms_max_height" value="480"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_bmp" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="compactmidi" value="true"/>
+      <capability name="voices" value="32"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_preferred_width" value="128"/>
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="screensaver_max_height" value="128"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper_max_height" value="128"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="screensaver_max_width" value="128"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="wallpaper_max_width" value="128"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_preferred_width" value="128"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="screensaver_preferred_height" value="128"/>
+      <capability name="wallpaper_preferred_height" value="128"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="screensaver_colors" value="16"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8912sp_ver1_sub20" user_agent="AUDIOVOX-CDM8912SP/T115SP0T13 UP.Browser/6.2.2.6.h.1.100 (GUI) MMP/2.0" fall_back="audiovox_cdm8912sp_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8912sp_ver1_subt22" user_agent="AUDIOVOX-CDM8912SP/T115SP0T22 UP.Browser/6.2.2.6.h.1.100 (GUI) MMP/2.0" fall_back="audiovox_cdm8912sp_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="cdm_8920tm_ver1" user_agent="CDM-8920TM" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://device.telusmobility.com/audiovox/cdm-8920.rdf"/>
+      <capability name="model_name" value="CDM-8920"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="7"/>
+      <capability name="rows" value="12"/>
+      <capability name="max_image_width" value="118"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="140"/>
+    </group>
+    <group id="image_format">
+      <capability name="bmp" value="true"/>
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="object_download">
+      <capability name="downloadfun_support" value="true"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_png" value="true"/>
+      <capability name="mms_max_size" value="409600"/>
+      <capability name="mms_max_width" value="1280"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_max_height" value="960"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_bmp" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="compactmidi" value="true"/>
+    </group>
+  </device>
+  <device id="cdm_8920tm_ver1_sub20" user_agent="CDM-8920TM/6.2 UP.Browser/6.2.2.6.h.1.100 (GUI) MMP/2.0" fall_back="cdm_8920tm_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8930_ver1" user_agent="AUDIOVOX-CDM-8930" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8930"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8930_ver1_sub6226h1100" user_agent="AUDIOVOX-CDM-8930 UP.Browser/6.2.2.6.h.1.100 (GUI) MMP/2.0" fall_back="audiovox_cdm8930_ver1"/>
+  <device id="audiovox_cdm8940_ver1" user_agent="AUDIOVOX-CDM8940" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8940"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="sound_format">
+      <capability name="qcelp" value="true"/>
+      <capability name="voices" value="32"/>
+      <capability name="mp3" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_max_size" value="350000"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_qcelp" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_jpeg_progressive" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_mp3" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+      <capability name="mms_midi_polyphonic_voices" value="32"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="161"/>
+      <capability name="resolution_height" value="220"/>
+      <capability name="resolution_width" value="176"/>
+      <capability name="max_image_height" value="200"/>
+    </group>
+    <group id="image_format">
+      <capability name="gif_animated" value="true"/>
+      <capability name="colors" value="262144"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="176"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_colors" value="18"/>
+      <capability name="wallpaper_max_height" value="220"/>
+      <capability name="screensaver_max_height" value="220"/>
+      <capability name="wallpaper_directdownload_size_limit" value="350000"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="screensaver_max_width" value="176"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="wallpaper_max_width" value="176"/>
+      <capability name="screensaver_directdownload_size_limit" value="350000"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="176"/>
+      <capability name="screensaver_preferred_height" value="220"/>
+      <capability name="wallpaper_preferred_height" value="220"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="350000"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="screensaver_colors" value="18"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8940_ver1_sub20" user_agent="AUDIOVOX-CDM8940 UP.Browser/6.2.3.2 (GUI) MMP/2.0" fall_back="audiovox_cdm8940_ver1"/>
+  <device id="verizon_audiovox_cdm8940_ver1" user_agent="audio8940" fall_back="audiovox_cdm8940_ver1" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8940"/>
+      <capability name="model_extra_info" value="Verizon Wireless"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm8945_ver1" user_agent="AUDIOVOX-CDM8945" fall_back="generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8945"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="168"/>
+      <capability name="resolution_height" value="220"/>
+      <capability name="resolution_width" value="176"/>
+      <capability name="max_image_height" value="200"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="gif_animated" value="true"/>
+      <capability name="colors" value="262144"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="176"/>
+      <capability name="ringtone_voices" value="72"/>
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="screensaver_max_height" value="220"/>
+      <capability name="wallpaper_colors" value="18"/>
+      <capability name="wallpaper_max_height" value="220"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="screensaver_directdownload_size_limit" value="204800"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="screensaver_max_width" value="176"/>
+      <capability name="wallpaper_directdownload_size_limit" value="204800"/>
+      <capability name="wallpaper_max_width" value="176"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="176"/>
+      <capability name="screensaver_preferred_height" value="220"/>
+      <capability name="wallpaper_preferred_height" value="220"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="204800"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="ringtone_spmidi" value="true"/>
+      <capability name="screensaver_colors" value="18"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_qcelp" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_jpeg_progressive" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_mp3" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+      <capability name="mms_midi_polyphonic_voices" value="72"/>
+      <capability name="mms_gif_animated" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="qcelp" value="true"/>
+      <capability name="voices" value="72"/>
+      <capability name="mp3" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="xhtml_support_level" value="-1"/>
+      <capability name="preferred_markup" value="wml_1_1"/>
+    </group>
+  </device>
+  <device id="verizon_audiovox_cdm8945_ver1" user_agent="audio8945" fall_back="audiovox_cdm8945_ver1">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-8945"/>
+      <capability name="model_extra_info" value="Verizon Wireless"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm9100_ver1" user_agent="AUDIOVOX-CDM9100" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-9100"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm9100_ver1_sub0514" user_agent="AUDIOVOX-CDM9100/05.14 UP.Browser/4.1.21c" fall_back="audiovox_cdm9100_ver1"/>
+  <device id="audiovox_9155gpx_ver1" user_agent="AUDIOVOX-9155GPX" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-9155-GPX"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+  </device>
+  <device id="audiovox_9155gpx_ver1_sub0713" user_agent="AUDIOVOX-9155GPX/07.13 UP.Browser/4.1.26c3" fall_back="audiovox_9155gpx_ver1"/>
+  <device id="audiovox_cdm9155sp_ver1" user_agent="AUDIOVOX-CDM9155SP" fall_back="uptext_generic"/>
+  <device id="audiovox_cdm9155sp_ver1_sub0760" user_agent="AUDIOVOX-CDM9155SP/07.60 UP.Browser/4.1.26c3" fall_back="audiovox_cdm9155sp_ver1"/>
+  <device id="audiovox_cdm9500_ver1" user_agent="AUDIOVOX-CDM9500" fall_back="upgui_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-9500"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="1"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="161"/>
+      <capability name="resolution_height" value="220"/>
+      <capability name="resolution_width" value="176"/>
+      <capability name="max_image_height" value="165"/>
+    </group>
+  </device>
+  <device id="audiovox_cdm9500_ver1_sub111030" user_agent="AUDIOVOX-CDM9500/111.030 UP.Browser/5.0.4.1 (GUI)" fall_back="audiovox_cdm9500_ver1"/>
+  <device id="cdm_9900_ver1" user_agent="CDM-9900" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-9900"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="sound_format">
+      <capability name="qcelp" value="true"/>
+      <capability name="voices" value="48"/>
+      <capability name="mp3" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_max_size" value="200000"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_qcelp" value="true"/>
+      <capability name="mms_midi_polyphonic" value="true"/>
+      <capability name="mms_jpeg_progressive" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_mp3" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+      <capability name="mms_gif_animated" value="true"/>
+      <capability name="mms_midi_polyphonic_voices" value="48"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="16"/>
+      <capability name="max_image_width" value="224"/>
+      <capability name="rows" value="5"/>
+      <capability name="resolution_height" value="320"/>
+      <capability name="resolution_width" value="240"/>
+      <capability name="max_image_height" value="280"/>
+    </group>
+    <group id="image_format">
+      <capability name="gif_animated" value="true"/>
+      <capability name="colors" value="262144"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="240"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="ringtone_voices" value="48"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_colors" value="18"/>
+      <capability name="wallpaper_max_height" value="320"/>
+      <capability name="screensaver_max_height" value="320"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="screensaver_max_width" value="240"/>
+      <capability name="screensaver_gif" value="true"/>
+      <capability name="wallpaper_max_width" value="240"/>
+      <capability name="screensaver_directdownload_size_limit" value="200000"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="240"/>
+      <capability name="screensaver_preferred_height" value="320"/>
+      <capability name="wallpaper_preferred_height" value="320"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="200000"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="screensaver_colors" value="18"/>
+    </group>
+  </device>
+  <device id="cdm_9900_ver1_sub131038" user_agent="CDM-9900/131.038 UP.Browser/6.2.2.4.e.1.101 (GUI) MMP/2.0" fall_back="cdm_9900_ver1"/>
+  <device id="verizon_cdm_9900_ver1" user_agent="audio9900" fall_back="cdm_9900_ver1" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="CDM-9900"/>
+      <capability name="model_extra_info" value="Verizon Wireless"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="220"/>
+    </group>
+  </device>
+  <device id="audiovox_smt5600_ver1" user_agent="AUDIOVOX-SMT5600" fall_back="ms_mobile_browser_ver1_subcemoz40176220" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="SMT-5600"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="sound_format">
+      <capability name="wav" value="true"/>
+      <capability name="aac" value="true"/>
+      <capability name="sp_midi" value="true"/>
+      <capability name="voices" value="40"/>
+      <capability name="amr" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_acodec_amr" value="true"/>
+      <capability name="video_vcodec_h263_3" value="true"/>
+      <capability name="video_directdownload_size_limit" value="32000"/>
+      <capability name="video_max_width" value="176"/>
+      <capability name="ringtone_voices" value="40"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="video_vcodec_mpeg4" value="true"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper_max_height" value="480"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="ringtone_amr" value="true"/>
+      <capability name="wallpaper_directdownload_size_limit" value="32000"/>
+      <capability name="wallpaper_max_width" value="640"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="video_3gpp2" value="false"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_wbmp" value="true"/>
+      <capability name="wallpaper_preferred_width" value="176"/>
+      <capability name="video_3gpp" value="true"/>
+      <capability name="video_mp4" value="true"/>
+      <capability name="video_acodec_awb" value="true"/>
+      <capability name="video_max_height" value="144"/>
+      <capability name="wallpaper_preferred_height" value="220"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="video_acodec_aac" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_directdownload_size_limit" value="32000"/>
+      <capability name="video_vcodec_h263_0" value="true"/>
+      <capability name="video_preferred_width" value="176"/>
+      <capability name="video_sqcif" value="true"/>
+      <capability name="video_qcif" value="true"/>
+      <capability name="wallpaper_bmp" value="true"/>
+      <capability name="ringtone_wav" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="video" value="true"/>
+      <capability name="video_preferred_height" value="144"/>
+      <capability name="ringtone_spmidi" value="true"/>
+      <capability name="video_wmv" value="false"/>
+      <capability name="ringtone_aac" value="true"/>
+    </group>
+    <group id="bearer">
+      <capability name="wifi" value="true"/>
+    </group>
+  </device>
+  <device id="audiovox_smt5600_ver1_subdev" user_agent="SMT5600" fall_back="audiovox_smt5600_ver1"/>
+  <device id="audiovox_smt5600_ver1_sub176220" user_agent="AUDIOVOX-SMT5600/Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; Smartphone; 176x220)" fall_back="audiovox_smt5600_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="audiovox_smt5600_ver1_sub176220_12" user_agent="AUDIOVOX-SMT5600/1.2 Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; Smartphone; 176x220)" fall_back="audiovox_smt5600_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="audiovox_pm8920kit_ver1" user_agent="AUDIOVOX-PM8920KIT" fall_back="opwv_v62_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://device.sprintpcs.com/Audiovox/PM8920KIT/T120SP0T19.rdf"/>
+      <capability name="model_name" value="PM-8920"/>
+      <capability name="brand_name" value="Audiovox"/>
+    </group>
+    <group id="display">
+      <capability name="rows" value="8"/>
+      <capability name="max_image_width" value="128"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="128"/>
+      <capability name="max_image_height" value="132"/>
+    </group>
+    <group id="image_format">
+      <capability name="gif" value="false"/>
+      <capability name="bmp" value="true"/>
+      <capability name="colors" value="262144"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="qcelp" value="true"/>
+      <capability name="voices" value="32"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="screensaver_jpg" value="true"/>
+      <capability name="screensaver_preferred_width" value="128"/>
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="directdownload_support" value="true"/>
+      <capability name="screensaver_max_height" value="132"/>
+      <capability name="wallpaper_max_height" value="132"/>
+      <capability name="wallpaper_colors" value="18"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="screensaver_directdownload_size_limit" value="131072"/>
+      <capability name="screensaver_max_width" value="128"/>
+      <capability name="wallpaper_directdownload_size_limit" value="131072"/>
+      <capability name="wallpaper_max_width" value="128"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="screensaver_bmp" value="true"/>
+      <capability name="screensaver_wbmp" value="true"/>
+      <capability name="wallpaper_preferred_width" value="128"/>
+      <capability name="wallpaper_wbmp" value="true"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="screensaver_preferred_height" value="132"/>
+      <capability name="wallpaper_preferred_height" value="132"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="screensaver_png" value="true"/>
+      <capability name="wallpaper_bmp" value="true"/>
+      <capability name="ringtone_qcelp" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="screensaver_colors" value="18"/>
+    </group>
+  </device>
+  <device id="audiovox_pm8920kit_ver1_subt120sp0t17" user_agent="AUDIOVOX-PM8920KIT/T120SP0T17 UP.Browser/6.2.2.6.h.1.100 (GUI) MMP/2.0" fall_back="audiovox_pm8920kit_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="blackberry_generic" user_agent="BlackBerry" fall_back="generic_xhtml">
+    <group id="product_info">
+      <capability name="mobile_browser" value="BlackBerry"/>
+      <capability name="has_pointing_device" value="true"/>
+      <capability name="device_os" value="RIM OS"/>
+      <capability name="has_qwerty_keyboard" value="true"/>
+      <capability name="pointing_method" value="clickwheel"/>
+      <capability name="mobile_browser_version" value="1.0"/>
+      <capability name="can_skip_aligned_link_row" value="true"/>
+      <capability name="device_os_version" value="1"/>
+      <capability name="brand_name" value="RIM"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="table_support" value="false"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="wml_1_2" value="true"/>
+      <capability name="preferred_markup" value="wml_1_2"/>
+      <capability name="xhtml_support_level" value="1"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_make_phone_call_string" value="tel:"/>
+      <capability name="xhtmlmp_preferred_mime_type" value="text/html"/>
+    </group>
+    <group id="image_format">
+      <capability name="gif" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="160"/>
+      <capability name="resolution_width" value="176"/>
+    </group>
+  </device>
+  <device id="blackberry_generic_ver2" user_agent="BlackBerry/2" fall_back="blackberry_generic">
+    <group id="markup">
+      <capability name="html_web_3_2" value="true"/>
+      <capability name="wml_1_3" value="true"/>
+      <capability name="preferred_markup" value="wml_1_3"/>
+    </group>
+    <group id="security">
+      <capability name="https_support" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="2.0"/>
+      <capability name="can_skip_aligned_link_row" value="true"/>
+      <capability name="device_os_version" value="2"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="160"/>
+      <capability name="resolution_width" value="160"/>
+    </group>
+  </device>
+  <device id="blackberry_generic_ver3_sub2" user_agent="BlackBerry/3.2" fall_back="blackberry_generic_ver2">
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="2"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="28"/>
+      <capability name="rows" value="16"/>
+      <capability name="max_image_width" value="160"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="160"/>
+      <capability name="max_image_height" value="160"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="8192000"/>
+      <capability name="max_object_size" value="8192000"/>
+    </group>
+    <group id="image_format">
+      <capability name="png" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="3.2"/>
+      <capability name="device_os_version" value="3.2"/>
+    </group>
+  </device>
+  <device id="blackberry_generic_ver3_sub30" user_agent="BlackBerry/3.3.0" fall_back="blackberry_generic_ver3_sub2">
+    <group id="markup">
+      <capability name="html_wi_imode_html_1" value="true"/>
+      <capability name="html_wi_imode_compact_generic" value="true"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="2397"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="3.3"/>
+      <capability name="device_os_version" value="3.3"/>
+    </group>
+  </device>
+  <device id="blackberry_generic_ver3_sub50" user_agent="BlackBerry/3.5.0" fall_back="blackberry_generic_ver3_sub30">
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="3.5"/>
+      <capability name="device_os_version" value="3.5"/>
+    </group>
+  </device>
+  <device id="blackberry_generic_ver3_sub60" user_agent="BlackBerry/3.6.0" fall_back="blackberry_generic_ver3_sub50">
+    <group id="markup">
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="preferred_markup" value="html_wi_w3_xhtmlbasic"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="3.6"/>
+      <capability name="device_os_version" value="3.6"/>
+    </group>
+  </device>
+  <device id="blackberry_generic_ver3_sub70" user_agent="BlackBerry/3.7.0" fall_back="blackberry_generic_ver3_sub60">
+    <group id="markup">
+      <capability name="multipart_support" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="midi_monophonic" value="true"/>
+    </group>
+    <group id="ajax">
+      <capability name="ajax_support_javascript" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="3.7"/>
+      <capability name="device_os_version" value="3.7"/>
+    </group>
+  </device>
+  <device id="blackberry_generic_ver4" user_agent="BlackBerry/4.0" fall_back="blackberry_generic_ver3_sub70">
+    <group id="wml_ui">
+      <capability name="table_support" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="xhtml_support_level" value="3"/>
+      <capability name="html_web_4_0" value="true"/>
+    </group>
+    <group id="xhtml_ui">
+      <capability name="xhtml_make_phone_call_string" value="wtai://wp/mc;"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+      <capability name="connectionoriented_unconfirmed_service_indication" value="true"/>
+    </group>
+    <group id="streaming">
+      <capability name="streaming_video" value="false"/>
+      <capability name="streaming_mp4" value="false"/>
+    </group>
+    <group id="object_download">
+      <capability name="video_3gpp" value="true"/>
+      <capability name="video" value="true"/>
+    </group>
+    <group id="ajax">
+      <capability name="ajax_support_javascript" value="true"/>
+    </group>
+    <group id="product_info">
+      <capability name="mobile_browser_version" value="4.0"/>
+      <capability name="device_os_version" value="4.0"/>
+    </group>
+  </device>
+  <device id="blackberry_857_ver1" user_agent="BlackBerry/2.5 (857)" fall_back="blackberry_generic_ver2" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="857"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="25"/>
+      <capability name="max_image_width" value="160"/>
+      <capability name="rows" value="12"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="160"/>
+      <capability name="max_image_height" value="160"/>
+    </group>
+  </device>
+  <device id="rim950_ver1" user_agent="RIM950" fall_back="blackberry_generic_ver2" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="950"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="25"/>
+      <capability name="max_image_width" value="120"/>
+      <capability name="rows" value="8"/>
+      <capability name="resolution_height" value="65"/>
+      <capability name="resolution_width" value="132"/>
+      <capability name="max_image_height" value="65"/>
+    </group>
+  </device>
+  <device id="rim950_ver1_subblackberry" user_agent="BlackBerry/2.5 (950)" fall_back="rim950_ver1"/>
+  <device id="rim957_ver1" user_agent="RIM957" fall_back="blackberry_generic_ver2" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="957"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="25"/>
+      <capability name="max_image_width" value="120"/>
+      <capability name="rows" value="12"/>
+      <capability name="resolution_height" value="160"/>
+      <capability name="resolution_width" value="160"/>
+      <capability name="max_image_height" value="160"/>
+    </group>
+  </device>
+  <device id="rim957_ver1_subblackberry" user_agent="BlackBerry/2.5 (957)" fall_back="rim957_ver1"/>
+  <device id="goweb_ver1" user_agent="Go.Web" fall_back="generic"/>
+  <device id="goweb_ver62" user_agent="Mozilla/2.0 (compatible; Go.Web/6.2" fall_back="goweb_ver1"/>
+  <device id="goweb_ver65" user_agent="Mozilla/2.0 (compatible; Go.Web/6.5" fall_back="goweb_ver62"/>
+  <device id="goweb_ver1_sub950" user_agent="Go.Web/1.1 (compatible; HandHTTP 1.1; Mozilla/1.0; RIM950)" fall_back="goweb_ver1"/>
+  <device id="goweb_ver1_sub950elaine10" user_agent="Go.Web/1.1 (UP.Browser/3.1-UPG1; Mozilla/1.0; RIM950; Elaine/1.0 )" fall_back="goweb_ver1"/>
+  <device id="goweb_ver1_sub957" user_agent="Go.Web/1.1 (compatible; HandHTTP 1.1; Mozilla/1.0; RIM957)" fall_back="goweb_ver1"/>
+  <device id="goweb_ver62_subrim950" user_agent="Mozilla/2.0 (compatible; Go.Web/6.2; HandHTTP 1.1; Elaine/1.0; RIM950 )" fall_back="goweb_ver62"/>
+  <device id="goweb_ver62_subrim957" user_agent="Mozilla/2.0 (compatible; Go.Web/6.2; HandHTTP 1.1; Elaine/1.0; RIM957 )" fall_back="goweb_ver62"/>
+  <device id="goweb_ver65_subrim957" user_agent="Mozilla/2.0 (compatible; Go.Web/6.5; HandHTTP 1.1; Elaine/1.0; RIM957 )" fall_back="goweb_ver65"/>
+  <device id="rim_6750_ver1" user_agent="OWG1 UP/4.1.20a" fall_back="uptext_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="6750"/>
+      <capability name="brand_name" value="RIM"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_width" value="120"/>
+    </group>
+  </device>
+  <device id="upsdk_sub4120a" user_agent="OWG1 UP/4.1.20a UP.Browser/4.1.20a-XXXX" fall_back="uptext_generic"/>
+  <device id="upsdk_sub4120adouble" user_agent="OWG1 UP/4.1.20a UP.Browser/4.1.20a-XXXX UP.Browser/4.1.20a-XXXX" fall_back="uptext_generic">
+    <group id="display">
+      <capability name="max_image_width" value="120"/>
+      <capability name="resolution_width" value="120"/>
+    </group>
+  </device>
+  <device id="upsdk_subhttpdirect" user_agent="OWG1 UP/4.1.20a UP.Browser/4.1.20a-XXXX UP.Link/4.1.HTTP-DIRECT" fall_back="uptext_generic">
+    <group id="product_info">
+      <capability name="model_name" value="WAP SDK"/>
+      <capability name="brand_name" value="Openwave"/>
+    </group>
+  </device>
+  <device id="elaine_ver1" user_agent="Elaine" fall_back="generic"/>
+  <device id="rover_ver0" user_agent="Rover 0" fall_back="generic"/>
+  <device id="rover_ver1_sub00" user_agent="Rover 0.0 (width=160;height=142;color=false;numcolors=2)" fall_back="rover_ver0"/>
+  <device id="rover_ver1" user_agent="Rover 1" fall_back="rover_ver0">
+    <group id="product_info">
+      <capability name="brand_name" value="Rover"/>
+    </group>
+  </device>
+  <device id="rover_ver1_sub15352" user_agent="Rover 1.5 (Palm; IP; OS v. 3.5.2)" fall_back="rover_ver1"/>
+  <device id="rover_ver1_sub15352h" user_agent="Rover 1.5 (Palm; IP; OS v. 3.5.2H)" fall_back="rover_ver1"/>
+  <device id="rover_ver1_sub1541" user_agent="Rover 1.5 (Palm; IP; OS v. 4.1)" fall_back="rover_ver1"/>
+  <device id="rover_ver2" user_agent="Rover 2" fall_back="rover_ver1"/>
+  <device id="rover_ver2_sub2040" user_agent="Rover 2.0 (Palm; IP; OS v. 4.0)" fall_back="rover_ver2"/>
+  <device id="rover_ver2_sub2041" user_agent="Rover 2.0 (Palm; IP; OS v. 4.1)" fall_back="rover_ver2"/>
+  <device id="rover_ver3" user_agent="Rover 3" fall_back="rover_ver2"/>
+  <device id="rover_ver3_sub30handheld" user_agent="Rover 3.0 (RIM Handheld; DataTAC; OS v. 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub30pager" user_agent="Rover 3.0 (RIM Pager; DataTAC; OS v. 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_submobitex25" user_agent="Rover 3.0 (RIM Handheld; Mobitex; OS v. 2.5)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_submobitex26" user_agent="Rover 3.0 (RIM Handheld; Mobitex; OS v. 2.6)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_submobitex21pager" user_agent="Rover 3.0 (RIM Pager; Mobitex; OS v. 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver1_submobitex26pager" user_agent="Rover 3.0 (RIM Pager; Mobitex; OS v. 2.6)" fall_back="rover_ver1"/>
+  <device id="rover_ver3_sub3520" user_agent="Rover 3.5 (RIM Handheld; DataTAC; OS v. 2.0)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3521" user_agent="Rover 3.5 (RIM Handheld; Mobitex; OS v. 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3620" user_agent="Rover 3.6 (RIM Handheld; Mobitex; OS v. 2.0)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3621" user_agent="Rover 3.6 (RIM Handheld; Mobitex; OS v. 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3621pager" user_agent="Rover 3.6 (RIM Pager; Mobitex; OS v. 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub360" user_agent="Rover 3.6.0 (width=160;height=142;color=false;numcolors=2)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3624" user_agent="Rover 3.6.24 (RIM Handheld; DataTAC; OS 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub36mobitex25" user_agent="Rover 3.6.24 (RIM Handheld; Mobitex; OS 2.5)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub36mobitex26" user_agent="Rover 3.6.24 (RIM Handheld; Mobitex; OS 2.6)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub36mobitex25pager" user_agent="Rover 3.6.24 (RIM Pager; Mobitex; OS 2.5)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub37mobitex25" user_agent="Rover 3.7.0.21 (RIM Handheld; Mobitex; OS 2.5)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub37mobitex26" user_agent="Rover 3.7.0.21 (RIM Handheld; Mobitex; OS 2.6)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub37mobitex26pager" user_agent="Rover 3.7.0.21 (RIM Pager; Mobitex; OS 2.6)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3800216" user_agent="Rover 3.8.0.0 (width=216;height=231;colordepth=32)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub38001571391" user_agent="Rover 3.8.0.0 (width=157;height=139;colordepth=1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3800227" user_agent="Rover 3.8.0.0 (width=227;height=230;colordepth=16)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3801arim" user_agent="Rover 3.8.0.1 Alpha (RIM Handheld; Mobitex; OS 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3801agood" user_agent="Rover 3.8.0.1 Alpha (Good Handheld; GoodLink; OS 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver3_sub3805a" user_agent="Rover 3.8.0.5 Alpha (RIM Handheld; Mobitex; OS 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver1_sub38031" user_agent="Rover 3.8.0.31 (width=157;height=139;colordepth=1)" fall_back="rover_ver1"/>
+  <device id="rover_ver3_subgfish" user_agent="Rover g.fish (RIM Handheld; Mobitex; OS v. 2.1)" fall_back="rover_ver3"/>
+  <device id="rover_ver1_subhammerhead1" user_agent="Rover Ham.mer.head.1 Alpha (RIM Handheld; Mobitex; OS 2.1)" fall_back="rover_ver1"/>
+  <device id="blackberry_5810_ver1" user_agent="BlackBerry5810" fall_back="blackberry_generic_ver3_sub2" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/5810/3.2.1.rdf"/>
+      <capability name="model_name" value="BlackBerry 5810"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_imode_html_1" value="true"/>
+      <capability name="html_wi_imode_compact_generic" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="max_image_width" value="150"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="2397"/>
+    </group>
+  </device>
+  <device id="blackberry_5810_ver1_sub321" user_agent="BlackBerry/3.2.1" fall_back="blackberry_5810_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry_5810_ver1_sub360" user_agent="BlackBerry5810/3.6.0" fall_back="blackberry_generic_ver3_sub60">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/5810/3.6.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 5810"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry5820_ver1" user_agent="BlackBerry5820" fall_back="blackberry_generic_ver3_sub60" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/5820/3.6.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 5820"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+  </device>
+  <device id="blackberry5820_ver1_sub360" user_agent="BlackBerry5820/3.6.0" fall_back="blackberry5820_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6210_ver1" user_agent="BlackBerry6210" fall_back="blackberry_generic_ver3_sub60" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6210/3.6.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 6210"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry6210_ver1_sub6210360" user_agent="BlackBerry6210/3.6.0" fall_back="blackberry6210_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6210_ver1_sub6210371" user_agent="BlackBerry6210/3.7.1" fall_back="blackberry_generic_ver3_sub70">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6210/3.7.1.rdf"/>
+      <capability name="model_name" value="BlackBerry 6210"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6220_ver1" user_agent="BlackBerry6220" fall_back="blackberry_generic_ver3_sub60" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6220"/>
+    </group>
+  </device>
+  <device id="blackberry6220_ver1_sub6220360" user_agent="BlackBerry6220/3.6.0" fall_back="blackberry6220_ver1"/>
+  <device id="blackberry6220_ver1_sub6220400" user_agent="BlackBerry6220/4.0.0" fall_back="blackberry_generic_ver4">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6220"/>
+    </group>
+  </device>
+  <device id="blackberry6230_ver1" user_agent="BlackBerry6230" fall_back="blackberry_generic_ver3_sub70" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6230/3.7.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 6230"/>
+      <capability name="uaprof2" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6230/3.7.1.rdf"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry6230_ver1_sub370" user_agent="BlackBerry6230/3.7.0" fall_back="blackberry6230_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6230_ver1_sub371" user_agent="BlackBerry6230/3.7.1" fall_back="blackberry6230_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6230_ver1_sub6230400" user_agent="BlackBerry6230/4.0.0" fall_back="blackberry_generic_ver4">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6230"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+  </device>
+  <device id="blackberry6230_ver1_sub6230400midp" user_agent="BlackBerry6230/4.0.0 Profile/MIDP-2.0 Configuration/CLDC-1.1" fall_back="blackberry6230_ver1_sub6230400"/>
+  <device id="blackberry6280_ver1" user_agent="BlackBerry6280" fall_back="blackberry_generic_ver3_sub70" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6280/3.7.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 6280"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry6280_ver1_sub370" user_agent="BlackBerry6280/3.7.0" fall_back="blackberry6280_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6280_ver1_sub371" user_agent="BlackBerry6280/3.7.1" fall_back="blackberry6280_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6280_ver1_sub3715033" user_agent="BlackBerry6280/3.7.1 UP.Browser/5.0.3.3" fall_back="blackberry6280_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6280_ver1_sub40" user_agent="BlackBerry6280/4.0.0 Profile/MIDP-2.0 Configuration/CLDC-1.1" fall_back="blackberry_generic_ver4">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6280"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+  </device>
+  <device id="blackberry6510_ver1" user_agent="BlackBerry6510" fall_back="blackberry_generic_ver3_sub60" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6510/3.3.1.rdf"/>
+      <capability name="model_name" value="BlackBerry 6510"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="100"/>
+      <capability name="j2me_screen_width" value="160"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry6510_ver1_sub361" user_agent="BlackBerry6510/3.6.1" fall_back="blackberry6510_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="blackberry6510_ver1_sub400" user_agent="BlackBerry6510/4.0.0 UP.Browser/5.0.3.3" fall_back="blackberry_generic_ver4">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6510/4.0.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 6510"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="resolution_height" value="100"/>
+      <capability name="max_image_height" value="100"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="blackberry6700_ver1" user_agent="BlackBerry6700" fall_back="blackberry_generic" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6700"/>
+    </group>
+  </device>
+  <device id="blackberry6710_ver1" user_agent="BlackBerry6710" fall_back="blackberry_generic_ver3_sub60" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6710/3.6.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 6710"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="160"/>
+      <capability name="j2me_screen_width" value="160"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry6710_ver1_sub360" user_agent="BlackBerry6710/3.6.0" fall_back="blackberry6710_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6710_ver1_sub371" user_agent="BlackBerry6710/3.7.1" fall_back="blackberry_generic_ver3_sub70">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6710"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+  </device>
+  <device id="blackberry6710_ver1_sub400" user_agent="BlackBerry6710/4.0.0 Profile/MIDP-2.0 Configuration/CLDC-1.1" fall_back="blackberry_generic_ver4">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6710"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="160"/>
+      <capability name="j2me_screen_width" value="160"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry6720_ver1" user_agent="BlackBerry6720" fall_back="blackberry_generic_ver3_sub60" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6720"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="160"/>
+      <capability name="j2me_screen_width" value="160"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry6720_ver1_sub360" user_agent="BlackBerry6720/3.6.0" fall_back="blackberry6720_ver1"/>
+  <device id="blackberry6720_ver1_sub400" user_agent="BlackBerry6720/4.0.0 Profile/MIDP-2.0 Configuration/CLDC-1.1" fall_back="blackberry_generic_ver4">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6720/4.0.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 6720"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry6750_ver1" user_agent="BlackBerry6750" fall_back="blackberry_generic_ver3_sub60" actual_device_root="true">
+    <group id="product_info">
+      <capability name="model_name" value="BlackBerry 6750"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="160"/>
+      <capability name="j2me_screen_width" value="160"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="max_image_width" value="140"/>
+    </group>
+  </device>
+  <device id="blackberry6750_ver1_sub6750361" user_agent="BlackBerry6750/3.6.1" fall_back="blackberry6750_ver1"/>
+  <device id="blackberry6750_ver1_sub400" user_agent="BlackBerry6750/4.0.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/5.0.3.3" fall_back="blackberry_generic_ver4">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/6750/4.0.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 6750"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="160"/>
+      <capability name="j2me_screen_width" value="160"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="blackberry7100_ver1" user_agent="BlackBerry7100" fall_back="blackberry_generic_ver3_sub70" actual_device_root="true">
+    <group id="product_info">
+      <capability name="has_qwerty_keyboard" value="false"/>
+      <capability name="mobile_browser_version" value="4.1.03"/>
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7100_240x260/4.0.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 7100"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="18"/>
+      <capability name="max_image_width" value="224"/>
+      <capability name="resolution_height" value="260"/>
+      <capability name="resolution_width" value="240"/>
+      <capability name="max_image_height" value="240"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="260"/>
+      <capability name="j2me_screen_width" value="240"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="object_download">
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="ringtone_amr" value="true"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper_max_height" value="260"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_max_width" value="240"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="240"/>
+      <capability name="wallpaper_preferred_height" value="260"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+    </group>
+    <group id="ajax">
+      <capability name="ajax_support_getelementbyid" value="true"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry7100_ver1_sub380" user_agent="BlackBerry7100/3.8.0" fall_back="blackberry7100_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry7100_ver1_sub400" user_agent="BlackBerry7100/4.0.0" fall_back="blackberry_generic_ver4" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7100_240x260/4.0.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 7100"/>
+      <capability name="model_extra_info" value="v4"/>
+    </group>
+    <group id="object_download">
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper_max_height" value="260"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="wallpaper_max_width" value="240"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_width" value="240"/>
+      <capability name="wallpaper_preferred_height" value="260"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_2_0" value="true"/>
+      <capability name="j2me_cldc_1_1" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry7100_ver1_sub400midp" user_agent="BlackBerry7100/4.0.0 Profile/MIDP-2.0 Configuration/CLDC-1.1" fall_back="blackberry7100_ver1_sub400"/>
+  <device id="blackberry7100_ver1_sub402" user_agent="BlackBerry7100/4.0.2 Profile/MIDP-2.0 Configuration/CLDC-1.1" fall_back="blackberry7100_ver1_sub400">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry7210_ver1" user_agent="BlackBerry7210" fall_back="blackberry_generic_ver3_sub70" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7210/3.7.1.rdf"/>
+      <capability name="model_name" value="BlackBerry 7210"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="max_image_width" value="224"/>
+      <capability name="resolution_width" value="240"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="131072"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry7100i_ver1" user_agent="BlackBerry7100i/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1" fall_back="blackberry_generic_ver4_sub10" actual_device_root="true">
+    <group id="product_info">
+      <capability name="has_qwerty_keyboard" value="false"/>
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7100i/4.1.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 7100i"/>
+    </group>
+    <group id="wml_ui">
+      <capability name="table_support" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="wml_1_1" value="true"/>
+      <capability name="wml_1_2" value="true"/>
+      <capability name="wml_1_3" value="true"/>
+      <capability name="preferred_markup" value="html_wi_oma_xhtmlmp_1_0"/>
+      <capability name="xhtml_support_level" value="3"/>
+      <capability name="multipart_support" value="true"/>
+      <capability name="html_web_4_0" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="18"/>
+      <capability name="max_image_width" value="224"/>
+      <capability name="resolution_width" value="240"/>
+      <capability name="resolution_height" value="260"/>
+      <capability name="max_image_height" value="240"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="wbmp" value="true"/>
+      <capability name="png" value="true"/>
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="object_download">
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="ringtone_spmidi" value="true"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_screen_height" value="260"/>
+      <capability name="j2me_screen_width" value="240"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_png" value="true"/>
+      <capability name="mms_max_size" value="307200"/>
+      <capability name="mms_max_width" value="640"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_spmidi" value="true"/>
+      <capability name="mms_max_height" value="480"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="mms_vcard" value="true"/>
+      <capability name="mms_jad" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_wmlc" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_wbmp" value="true"/>
+      <capability name="mms_vcalendar" value="true"/>
+      <capability name="mms_jar" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="sp_midi" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="9"/>
+    </group>
+  </device>
+  <device id="blackberry7210_ver1_sub370" user_agent="BlackBerry7210/3.7.0" fall_back="blackberry7210_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry7210_ver1_sub371" user_agent="BlackBerry7210/3.7.1" fall_back="blackberry7210_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry7130_ver1" user_agent="BlackBerry7130" fall_back="blackberry_generic_ver4_sub10" actual_device_root="true">
+    <group id="product_info">
+      <capability name="has_qwerty_keyboard" value="false"/>
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7130/4.1.03.rdf"/>
+      <capability name="model_name" value="BlackBerry 7130"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="gif" value="true"/>
+      <capability name="bmp" value="true"/>
+      <capability name="wbmp" value="true"/>
+      <capability name="gif_animated" value="true"/>
+      <capability name="png" value="true"/>
+      <capability name="colors" value="65536"/>
+      <capability name="tiff" value="true"/>
+    </group>
+    <group id="markup">
+      <capability name="html_wi_oma_xhtmlmp_1_0" value="true"/>
+      <capability name="html_wi_w3_xhtmlbasic" value="true"/>
+      <capability name="wml_1_1" value="true"/>
+      <capability name="wml_1_2" value="true"/>
+      <capability name="wml_1_3" value="true"/>
+      <capability name="multipart_support" value="true"/>
+      <capability name="html_web_4_0" value="true"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="18"/>
+      <capability name="max_image_width" value="235"/>
+      <capability name="resolution_width" value="240"/>
+      <capability name="resolution_height" value="260"/>
+      <capability name="max_image_height" value="240"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="object_download">
+      <capability name="wallpaper_png" value="true"/>
+      <capability name="ringtone_voices" value="32"/>
+      <capability name="ringtone_mp3" value="true"/>
+      <capability name="wallpaper_max_height" value="260"/>
+      <capability name="wallpaper_colors" value="16"/>
+      <capability name="wallpaper" value="true"/>
+      <capability name="ringtone_amr" value="true"/>
+      <capability name="wallpaper_max_width" value="240"/>
+      <capability name="ringtone_midi_monophonic" value="true"/>
+      <capability name="wallpaper_preferred_width" value="240"/>
+      <capability name="wallpaper_jpg" value="true"/>
+      <capability name="wallpaper_preferred_height" value="260"/>
+      <capability name="ringtone" value="true"/>
+      <capability name="wallpaper_gif" value="true"/>
+      <capability name="ringtone_wav" value="true"/>
+      <capability name="ringtone_midi_polyphonic" value="true"/>
+      <capability name="oma_support" value="true"/>
+      <capability name="screensaver" value="true"/>
+      <capability name="ringtone_spmidi" value="true"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+    </group>
+    <group id="j2me">
+      <capability name="j2me_midp_2_0" value="true"/>
+      <capability name="j2me_cldc_1_0" value="true"/>
+      <capability name="j2me_cldc_1_1" value="true"/>
+      <capability name="j2me_screen_height" value="260"/>
+      <capability name="j2me_screen_width" value="240"/>
+      <capability name="j2me_midp_1_0" value="true"/>
+    </group>
+    <group id="mms">
+      <capability name="mms_png" value="true"/>
+      <capability name="mms_max_size" value="307200"/>
+      <capability name="mms_max_width" value="640"/>
+      <capability name="sender" value="true"/>
+      <capability name="mms_spmidi" value="true"/>
+      <capability name="mms_max_height" value="480"/>
+      <capability name="mms_gif_static" value="true"/>
+      <capability name="mms_wav" value="true"/>
+      <capability name="mms_vcard" value="true"/>
+      <capability name="mms_jad" value="true"/>
+      <capability name="mms_midi_monophonic" value="true"/>
+      <capability name="mms_wmlc" value="true"/>
+      <capability name="receiver" value="true"/>
+      <capability name="mms_wbmp" value="true"/>
+      <capability name="mms_vcalendar" value="true"/>
+      <capability name="mms_mp3" value="true"/>
+      <capability name="mms_jar" value="true"/>
+      <capability name="mms_amr" value="true"/>
+      <capability name="mms_jpeg_baseline" value="true"/>
+    </group>
+    <group id="sound_format">
+      <capability name="wav" value="true"/>
+      <capability name="sp_midi" value="true"/>
+      <capability name="mp3" value="true"/>
+      <capability name="amr" value="true"/>
+      <capability name="midi_monophonic" value="true"/>
+      <capability name="midi_polyphonic" value="true"/>
+    </group>
+    <group id="drm">
+      <capability name="oma_v_1_0_forwardlock" value="true"/>
+    </group>
+    <group id="bearer">
+      <capability name="max_data_rate" value="200"/>
+    </group>
+  </device>
+  <device id="blackberry7130_ver1_sub410" user_agent="BlackBerry7130/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/1" fall_back="blackberry7130_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="200"/>
+    </group>
+  </device>
+  <device id="blackberry7220_ver1" user_agent="BlackBerry7220" fall_back="blackberry_generic_ver3_sub70" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7220/3.7.1.rdf"/>
+      <capability name="model_name" value="BlackBerry 7220"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="max_image_width" value="224"/>
+      <capability name="resolution_width" value="240"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="32768"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" value="true"/>
+      <capability name="wap_push_support" value="true"/>
+      <capability name="connectionoriented_unconfirmed_cache_operation" value="true"/>
+    </group>
+  </device>
+  <device id="blackberry7220_ver1_sub370" user_agent="BlackBerry7220/3.7.0" fall_back="blackberry7220_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry7220_ver1_sub371" user_agent="BlackBerry7220/3.7.1" fall_back="blackberry7220_ver1">
+    <group id="bearer">
+      <capability name="max_data_rate" value="40"/>
+    </group>
+  </device>
+  <device id="blackberry7230_ver1" user_agent="BlackBerry7230" fall_back="blackberry_generic_ver3_sub70" actual_device_root="true">
+    <group id="product_info">
+      <capability name="uaprof" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7230/3.7.0.rdf"/>
+      <capability name="model_name" value="BlackBerry 7230"/>
+      <capability name="uaprof2" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7230/3.7.1.rdf"/>
+      <capability name="uaprof3" value="http://www.blackberry.net/go/mobile/profiles/uaprof/7230/4.0.0.rdf"/>
+    </group>
+    <group id="display">
+      <capability name="columns" value="26"/>
+      <capability name="rows" value="10"/>
+      <capability name="max_image_width" value="220"/>
+      <capability name="resolution_width" value="240"/>
+    </group>
+    <group id="image_format">
+      <capability name="jpg" value="true"/>
+      <capability name="colors" value="65536"/>
+    </group>
+    <group id="storage">
+      <capability name="max_deck_size" value="131072"/>
+    </group>
+    <group id="wap_push">
+      <capability name="connectionless_cache_operation" value="true"/>
+      <capability name="connectionoriented_confirmed_service_indication" value="true"/>
+      <capability name="connectionoriented_confirmed_service_load" value="true"/>
+      <capability name="connectionoriented_confirmed_cache_operation" v
