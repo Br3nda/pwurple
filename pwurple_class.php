@@ -1,5 +1,5 @@
 <?php
-/* ***** BEGIN LICENSE BLOCK *****
+/**
  * Version: MPL 1.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
@@ -21,17 +21,10 @@
  *
  * Contributor(s): Herouth Maoz.
  *
- * ***** END LICENSE BLOCK ***** */
+ * @file
+ */
 
-/*
- * $Id$
- * $RCSfile: pwurple_class.php,v $ v2.1 beta3 (Feb, 28 2006)
- * Author: Andrea Trasatti ( atrasatti AT users DOT sourceforge DOT net )
- * Multicache implementation: Herouth Maoz ( herouth AT spamcop DOT net )
- *
-*/
-
-/*
+/**
  *
  * This is a working example of a class to read the WURFL xml, take a user agent
  * and make something useful with it. Once you will have created an object with
@@ -49,6 +42,7 @@
  *
  * If you like it and use it, please let me know or contact the wmlprogramming
  * mailing list: wmlprogramming@yahoogroups.com
+ * @file 
  *
  */
 
