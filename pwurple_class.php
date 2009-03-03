@@ -92,7 +92,7 @@ class pwurple_class {
 	 * associative array user_agent=>id
 	 * @var associative array
 	 */
-	var $_wurfl_agents="";
+  private $_wurfl_agents = array();
 
 	/**
 	 * device's complete user agent (just in case)
